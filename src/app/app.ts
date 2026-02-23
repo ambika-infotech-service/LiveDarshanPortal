@@ -26,6 +26,31 @@ export class App {
     this.darshanService.getItemsByCategory('devotional-video')
   );
 
+  // Get devotional items grouped by deity
+  hanumanVideos = computed(() =>
+    this.darshanService.getItemsByDeity('Lord Hanuman')
+  );
+
+  shivaVideos = computed(() =>
+    this.darshanService.getItemsByDeity('Lord Shiva')
+  );
+
+  durgaVideos = computed(() =>
+    this.darshanService.getItemsByDeity('Goddess Durga')
+  );
+
+  ganeshVideos = computed(() =>
+    this.darshanService.getItemsByDeity('Lord Ganesh')
+  );
+
+  vishnuVideos = computed(() =>
+    this.darshanService.getItemsByDeity('Lord Vishnu')
+  );
+
+  shaniVideos = computed(() =>
+    this.darshanService.getItemsByDeity('Lord Shani')
+  );
+
   constructor(
     private darshanService: DarshanDataService,
     public languageService: LanguageService
