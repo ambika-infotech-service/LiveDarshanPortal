@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles for Live Darshan Portal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  min-height: 100vh;
+}
+
+/* Custom Tab Styles */
+.custom-tabs {
+  border: none;
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+}
+
+.custom-tabs .nav-link {
+  color: #6b7280;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.custom-tabs .nav-link:hover {
+  color: #d97706;
+  background: #fef3c7;
+}
+
+.custom-tabs .nav-link.active {
+  color: white;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+/* Navbar Styles */
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+/* Dropdown Menu */
+.dropdown-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+/* Footer Styles */
+footer {
+  margin-top: auto;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .custom-tabs .nav-link {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    margin: 2px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.2rem;
+  }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Accessibility Improvements */
+.nav-link:focus,
+.dropdown-item:focus,
+button:focus {
+  outline: 2px solid #d97706;
+  outline-offset: 2px;
+}

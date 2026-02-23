@@ -1,0 +1,23 @@
+.section-title {
+  color: #b45309;
+  font-weight: 700;
+  font-size: 2rem;
+  padding-bottom: 10px;
+  margin-bottom: 1rem;
+}
+
+.title-underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #d97706, transparent);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
