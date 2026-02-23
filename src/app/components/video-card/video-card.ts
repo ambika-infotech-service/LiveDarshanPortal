@@ -18,12 +18,15 @@ export class VideoCardComponent {
   ) {}
 
   getEmbedUrl(): SafeResourceUrl {
-    const youtubeId = this.item().youtubeId;
+    const { youtubeId, channelId, isLive } = this.item();
+
+    if (isLive && channelId) {
+      const url = `https://www.youtube.com/embed/live_stream?channel=${channelId}&autoplay=0&mute=0&controls=1&rel=0&modestbranding=1&playsinline=1`;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    }
 
     // Handle channel handle live streams (format: "@channelName")
-    if (youtubeId.startsWith('@')) {
-      // Try using the standard YouTube embed with the handle format
-      // Add more parameters for better compatibility
+    if (isLive && youtubeId.startsWith('@')) {
       const url = `https://www.youtube.com/embed/${youtubeId}/live?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1&playsinline=1`;
       return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
@@ -49,10 +52,14 @@ export class VideoCardComponent {
   }
 
   getYouTubeUrl(): string {
-    const youtubeId = this.item().youtubeId;
+    const { youtubeId, channelId, isLive } = this.item();
+
+    if (isLive && channelId) {
+      return `https://www.youtube.com/channel/${channelId}/live`;
+    }
 
     // Handle channel handle live streams
-    if (youtubeId.startsWith('@')) {
+    if (isLive && youtubeId.startsWith('@')) {
       return `https://www.youtube.com/${youtubeId}/live`;
     }
 

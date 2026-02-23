@@ -8,9 +8,9 @@ export class DarshanDataService {
   /**
    * Live Darshan Portal - YouTube Live Stream Channels
    *
-   * These channels provide continuous live darshan streams.
-   * The youtubeId stores the YouTube channel handle (e.g., @channelName).
-   * These are embedded as: https://www.youtube.com/embed/@channelHandle/live
+  * These channels provide continuous live darshan streams.
+  * Use channelId for reliable live embeds: https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID
+  * The youtubeId still stores the channel handle (e.g., @channelName) for links when needed.
    */
   private allItems: DarshanItem[] = [
     // 12 Jyotirlingas
@@ -23,6 +23,7 @@ export class DarshanDataService {
       },
       category: 'jyotirlinga',
       youtubeId: '@SomnathTempleOfficialChannel',
+      channelId: 'UCT1egsvA08YcdMLiEu1DTRg',
       location: {
         en: 'Prabhas Patan, Gujarat',
         hi: 'प्रभास पाटन, गुजरात',
@@ -44,6 +45,7 @@ export class DarshanDataService {
       },
       category: 'jyotirlinga',
       youtubeId: '@mahakaleshwar_live',
+      channelId: 'UCiH1r_BDhmHU4_CXX2mlcXw',
       location: {
         en: 'Ujjain, Madhya Pradesh',
         hi: 'उज्जैन, मध्य प्रदेश',
@@ -65,6 +67,7 @@ export class DarshanDataService {
       },
       category: 'jyotirlinga',
       youtubeId: '@ShriOmkarOfficial',
+      channelId: 'UCsIZ3yYwCW4316fPX3V-4lg',
       location: {
         en: 'Khandwa, Madhya Pradesh',
         hi: 'खंडवा, मध्य प्रदेश',
@@ -86,6 +89,7 @@ export class DarshanDataService {
       },
       category: 'jyotirlinga',
       youtubeId: '@ShreeKashiVishwanathMandir',
+      channelId: 'UCdMj2twWfMHXrWgX5oVdoyA',
       location: {
         en: 'Varanasi, Uttar Pradesh',
         hi: 'वाराणसी, उत्तर प्रदेश',
@@ -107,6 +111,7 @@ export class DarshanDataService {
       },
       category: 'jyotirlinga',
       youtubeId: '@nageshwarjyotirlingadwarik9968',
+      channelId: 'UChehm1WKmChFGvnwhYurctg',
       location: {
         en: 'Dwarka, Gujarat',
         hi: 'द्वारका, गुजरात',
@@ -130,6 +135,7 @@ export class DarshanDataService {
       },
       category: 'local-temple',
       youtubeId: '@umiyamatajiunjha',
+      channelId: 'UCJhH7NV0ArTSUA3r4uXnGCw',
       location: {
         en: 'Unjha, Gujarat',
         hi: 'उंझा, गुजरात',
@@ -151,6 +157,7 @@ export class DarshanDataService {
       },
       category: 'local-temple',
       youtubeId: '@officialambajitemple',
+      channelId: 'UCUge9PCf1By7w1DEP95xXoA',
       location: {
         en: 'Ambaji, Gujarat',
         hi: 'अंबाजी, गुजरात',
@@ -172,6 +179,7 @@ export class DarshanDataService {
       },
       category: 'local-temple',
       youtubeId: '@salangpurhanumanji',
+      channelId: 'UCI1r_MNxzyvUPHyTdWDe4NA',
       location: {
         en: 'Salangpur, Gujarat',
         hi: 'सलंगपुर, गुजरात',
@@ -193,6 +201,7 @@ export class DarshanDataService {
       },
       category: 'local-temple',
       youtubeId: '@shridwarkadhishmandirofficial',
+      channelId: 'UCBAvMHZO3BIfMMhOK9LMOYQ',
       location: {
         en: 'Dwarka, Gujarat',
         hi: 'द्वारका, गुजरात',
@@ -214,6 +223,7 @@ export class DarshanDataService {
       },
       category: 'local-temple',
       youtubeId: '@RanchhodraijiLiveDarshanDakor',
+      channelId: 'UCFJGjnmIvcZVNkOggfYKp3A',
       location: {
         en: 'Dakor, Gujarat',
         hi: 'डाकोर, गुजरात',

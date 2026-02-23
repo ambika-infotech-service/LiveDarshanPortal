@@ -11,6 +11,7 @@ export interface DarshanItem {
   };
   category: Category;
   youtubeId: string;
+  channelId?: string;
   location?: {
     en: string;
     hi: string;
