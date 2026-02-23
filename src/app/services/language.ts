@@ -14,7 +14,7 @@ export interface Translations {
   providedIn: 'root',
 })
 export class LanguageService {
-  currentLanguage = signal<Language>('en');
+  currentLanguage = signal<Language>('gu');
 
   translations: Translations = {
     title: {
