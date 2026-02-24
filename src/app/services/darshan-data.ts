@@ -258,28 +258,29 @@ export class DarshanDataService {
       },
       isLive: true
     },
-    {
-      id: 'swaminarayan-kalupur',
-      name: {
-        en: 'Shree Swaminarayan Mandir Kalupur',
-        hi: 'श्री स्वामीनारायण मंदिर कालूपुर',
-        gu: 'શ્રી સ્વામીનારાયણ મંદિર કાલૂપુર'
-      },
-      category: 'local-temple',
-      youtubeId: '@SwaminarayanLiveDarshan',
-      channelId: 'UCRit5-okD6Ry_l1Bc1fEAKg',
-      location: {
-        en: 'Kalupur, Ahmedabad, Gujarat',
-        hi: 'कालूपुर, अहमदाबाद, गुजरात',
-        gu: 'કાલૂપુર, અમદાવાદ, ગુજરાત'
-      },
-      deity: {
-        en: 'Lord Swaminarayan',
-        hi: 'भगवान स्वामीनारायण',
-        gu: 'ભગવાન સ્વામીનારાયણ'
-      },
-      isLive: true
-    },
+    // TODO: Uncomment when ready
+    // {
+    //   id: 'swaminarayan-kalupur',
+    //   name: {
+    //     en: 'Shree Swaminarayan Mandir Kalupur',
+    //     hi: 'श्री स्वामीनारायण मंदिर कालूपुर',
+    //     gu: 'શ્રી સ્વામીનારાયણ મંદિર કાલૂપુર'
+    //   },
+    //   category: 'local-temple',
+    //   youtubeId: '@SwaminarayanLiveDarshan',
+    //   channelId: 'UCRit5-okD6Ry_l1Bc1fEAKg',
+    //   location: {
+    //     en: 'Kalupur, Ahmedabad, Gujarat',
+    //     hi: 'कालूपुर, अहमदाबाद, गुजरात',
+    //     gu: 'કાલૂપુર, અમદાવાદ, ગુજરાત'
+    //   },
+    //   deity: {
+    //     en: 'Lord Swaminarayan',
+    //     hi: 'भगवान स्वामीनारायण',
+    //     gu: 'ભગવાન સ્વામીનારાયણ'
+    //   },
+    //   isLive: true
+    // },
 
     // Devotional Videos
     {
