@@ -1,16 +1,22 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { VideoCardComponent } from './components/video-card/video-card';
 import { SectionHeadingComponent } from './components/section-heading/section-heading';
 import { DarshanDataService } from './services/darshan-data';
 import { LanguageService, Language } from './services/language';
+import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
   imports: [VideoCardComponent, SectionHeadingComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App {
+export class App implements OnInit {
+  private darshanService = inject(DarshanDataService);
+  public languageService = inject(LanguageService);
+  private seoService = inject(SeoService);
+
   activeTab = signal<string>('jyotirlingas');
 
   // Get items by category
@@ -51,10 +57,15 @@ export class App {
     this.darshanService.getItemsByDeity('Lord Shani')
   );
 
-  constructor(
-    private darshanService: DarshanDataService,
-    public languageService: LanguageService
-  ) {}
+  ngOnInit(): void {
+    // Initialize SEO with organization schema
+    this.seoService.addOrganizationSchema();
+
+    // Initialize breadcrumb schema for homepage
+    this.seoService.addBreadcrumbSchema([
+      { name: 'Home', url: 'https://livedarshanportal.com' }
+    ]);
+  }
 
   setActiveTab(tab: string) {
     this.activeTab.set(tab);

@@ -1,21 +1,37 @@
-import { Component, input } from '@angular/core';
+import { Component, input, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { DarshanItem } from '../../models/darshan.model';
 import { LanguageService } from '../../services/language';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-video-card',
   imports: [],
   templateUrl: './video-card.html',
   styleUrl: './video-card.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VideoCardComponent {
+export class VideoCardComponent implements OnInit {
   item = input.required<DarshanItem>();
 
-  constructor(
-    public languageService: LanguageService,
-    private sanitizer: DomSanitizer
-  ) {}
+  public languageService = inject(LanguageService);
+  private sanitizer = inject(DomSanitizer);
+  private seoService = inject(SeoService);
+
+  ngOnInit(): void {
+    // Add video schema for SEO
+    const itemData = this.item();
+    const description = itemData.description?.[this.languageService.currentLanguage()] ||
+                       itemData.name[this.languageService.currentLanguage()];
+
+    this.seoService.addVideoSchema({
+      name: this.getTranslatedName(),
+      description: description,
+      thumbnailUrl: `https://img.youtube.com/vi/${itemData.youtubeId}/maxresdefault.jpg`,
+      uploadDate: new Date().toISOString(),
+      duration: itemData.isLive ? 'PT0H0M0S' : undefined
+    });
+  }
 
   getEmbedUrl(): SafeResourceUrl {
     const { youtubeId, channelId, isLive } = this.item();
@@ -65,5 +81,35 @@ export class VideoCardComponent {
 
     // Handle regular video IDs
     return `https://www.youtube.com/watch?v=${youtubeId}`;
+  }
+
+  /**
+   * Get alt text for video card images
+   */
+  getAltText(): string {
+    const lang = this.languageService.currentLanguage();
+    const name = this.item().name[lang];
+    const location = this.item().location?.[lang];
+    const deity = this.item().deity?.[lang];
+
+    if (location && deity) {
+      return `${name} - ${deity} at ${location}`;
+    }
+    if (location) {
+      return `${name} at ${location}`;
+    }
+    if (deity) {
+      return `${name} - ${deity}`;
+    }
+    return `Live streaming of ${name}`;
+  }
+
+  /**
+   * Get SEO-friendly aria-label
+   */
+  getAriaLabel(): string {
+    const lang = this.languageService.currentLanguage();
+    const status = this.item().isLive ? 'Live Now' : 'Offline';
+    return `${this.item().name[lang]} - ${status}`;
   }
 }

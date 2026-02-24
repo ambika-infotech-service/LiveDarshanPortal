@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://livedarshanportal.com/</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Jyotirlingas Section -->
+  <url>
+    <loc>https://livedarshanportal.com/#jyotirlingas</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Local Temples Section -->
+  <url>
+    <loc>https://livedarshanportal.com/#local-temples</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Devotional Videos Section -->
+  <url>
+    <loc>https://livedarshanportal.com/#devotional</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Video Landing Pages with Schema -->
+  <!-- Jyotirlinga Videos -->
+  <url>
+    <loc>https://livedarshanportal.com/#somnath</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <video:video>
+      <video:title>Somnath Temple Live Darshan - Jyotirlinga</video:title>
+      <video:description>Watch live darshan of Somnath Jyotirlinga Temple</video:description>
+      <video:thumbnail_loc>https://img.youtube.com/vi/CHANGE_ME/maxresdefault.jpg</video:thumbnail_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=CHANGE_ME</video:content_loc>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#mallikarjuna</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <video:video>
+      <video:title>Mallikarjuna Jyotirlinga Live Darshan</video:title>
+      <video:description>Experience live streaming of Mallikarjuna Jyotirlinga Temple</video:description>
+      <video:thumbnail_loc>https://img.youtube.com/vi/CHANGE_ME/maxresdefault.jpg</video:thumbnail_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=CHANGE_ME</video:content_loc>
+    </video:video>
+  </url>
+
+  <!-- More Jyotirlingas -->
+  <url>
+    <loc>https://livedarshanportal.com/#ujjain</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#omkareshwar</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#kedarnath</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#kashi</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#trimbakeshwar</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#bhimashankar</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#vikarabhairava</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#rameswaram</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#grishneshwar</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Devotional Videos Section -->
+  <url>
+    <loc>https://livedarshanportal.com/#hanuman-videos</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#shiva-videos</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#durga-videos</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#ganesh-videos</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#vishnu-videos</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://livedarshanportal.com/#shani-videos</loc>
+    <lastmod>2024-01-01T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
