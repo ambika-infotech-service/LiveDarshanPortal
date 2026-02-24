@@ -28,7 +28,7 @@ User-agent: DuckDuckBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://livedarshanportal.com/sitemap.xml
+Sitemap: https://livedarshan.ambikainfotech.online/sitemap.xml
 
 # Crawl-delay for all bots (in seconds)
 Crawl-delay: 1

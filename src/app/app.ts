@@ -63,7 +63,7 @@ export class App implements OnInit {
 
     // Initialize breadcrumb schema for homepage
     this.seoService.addBreadcrumbSchema([
-      { name: 'Home', url: 'https://livedarshanportal.com' }
+      { name: 'Home', url: 'https://livedarshan.ambikainfotech.online' }
     ]);
   }
 

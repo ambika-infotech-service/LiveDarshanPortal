@@ -90,7 +90,7 @@ export class SeoService {
       title: 'Live Darshan Portal - 12 Jyotirlingas & Temple Live Streams',
       description: 'Watch live darshan of 12 Jyotirlingas, local temples, and devotional videos. Experience divine blessings from anywhere.',
       keywords: 'live darshan, jyotirlingas, temple live streams, devotional videos, hindu temples, spiritual streaming, online puja',
-      url: 'https://livedarshanportal.com',
+      url: 'https://livedarshan.ambikainfotech.online',
       type: 'website'
     });
   }
@@ -130,8 +130,8 @@ export class SeoService {
       '@type': 'Organization',
       name: 'Live Darshan Portal',
       description: 'Live streaming platform for temple darshan and devotional content',
-      url: 'https://livedarshanportal.com',
-      logo: 'https://livedarshanportal.com/logo.png',
+      url: 'https://livedarshan.ambikainfotech.online',
+      logo: 'https://livedarshan.ambikainfotech.online/logo.png',
       sameAs: [
         'https://www.youtube.com/@livedarshanportal',
         'https://www.facebook.com/livedarshanportal'

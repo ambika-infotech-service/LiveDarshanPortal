@@ -5,7 +5,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://livedarshanportal.com/</loc>
+    <loc>https://livedarshan.ambikainfotech.online/</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -13,7 +13,7 @@
 
   <!-- Jyotirlingas Section -->
   <url>
-    <loc>https://livedarshanportal.com/#jyotirlingas</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#jyotirlingas</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -21,7 +21,7 @@
 
   <!-- Local Temples Section -->
   <url>
-    <loc>https://livedarshanportal.com/#local-temples</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#local-temples</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -29,7 +29,7 @@
 
   <!-- Devotional Videos Section -->
   <url>
-    <loc>https://livedarshanportal.com/#devotional</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#devotional</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -38,7 +38,7 @@
   <!-- Video Landing Pages with Schema -->
   <!-- Jyotirlinga Videos -->
   <url>
-    <loc>https://livedarshanportal.com/#somnath</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#somnath</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -51,7 +51,7 @@
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#mallikarjuna</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#mallikarjuna</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -65,63 +65,63 @@
 
   <!-- More Jyotirlingas -->
   <url>
-    <loc>https://livedarshanportal.com/#ujjain</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#ujjain</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#omkareshwar</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#omkareshwar</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#kedarnath</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#kedarnath</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#kashi</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#kashi</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#trimbakeshwar</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#trimbakeshwar</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#bhimashankar</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#bhimashankar</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#vikarabhairava</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#vikarabhairava</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#rameswaram</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#rameswaram</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#grishneshwar</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#grishneshwar</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -129,42 +129,42 @@
 
   <!-- Devotional Videos Section -->
   <url>
-    <loc>https://livedarshanportal.com/#hanuman-videos</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#hanuman-videos</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#shiva-videos</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#shiva-videos</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#durga-videos</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#durga-videos</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#ganesh-videos</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#ganesh-videos</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#vishnu-videos</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#vishnu-videos</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://livedarshanportal.com/#shani-videos</loc>
+    <loc>https://livedarshan.ambikainfotech.online/#shani-videos</loc>
     <lastmod>2024-01-01T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
