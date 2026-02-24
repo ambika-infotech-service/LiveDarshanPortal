@@ -174,8 +174,8 @@ export class DarshanDataService {
       id: 'salangpur-hanuman',
       name: {
         en: 'Salangpur Hanuman Temple',
-        hi: 'सलंगपुर हनुमान मंदिर',
-        gu: 'સલંગપુર હનુમાન મંદિર'
+        hi: 'सालंगपुर हनुमान मंदिर ()श्री कष्टभंजनदेव हनुमानजी मंदिर)',
+        gu: 'સાળંગપુર હનુમાન મંદિર (શ્રી કષ્ટભંજનદેવ હનુમાનજી મંદિર)'
       },
       category: 'local-temple',
       youtubeId: '@salangpurhanumanji',
@@ -233,6 +233,28 @@ export class DarshanDataService {
         en: 'Ranchhodraiji (Lord Krishna)',
         hi: 'रणछोड़राय (भगवान कृष्ण)',
         gu: 'રણછોડરાય (ભગવાન કૃષ્ણ)'
+      },
+      isLive: true
+    },
+    {
+      id: 'khodiyar-mandir',
+      name: {
+        en: 'Khodiyar Mandir',
+        hi: 'खोडियार मंदिर',
+        gu: 'ખોડિયાર મંદિર'
+      },
+      category: 'local-temple',
+      youtubeId: '@khodiyarmandirtrust',
+      channelId: 'UCo7bpO8VR_DRB1E4GI5qswA',
+      location: {
+        en: 'Rajpara, Gujarat',
+        hi: 'राजपारा, गुजरात',
+        gu: 'રાજપારા, ગુજરાત'
+      },
+      deity: {
+        en: 'Khodiyar Mata',
+        hi: 'खोडियार माता',
+        gu: 'ખોડિયાર માતા'
       },
       isLive: true
     },
