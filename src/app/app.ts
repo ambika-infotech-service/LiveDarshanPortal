@@ -21,11 +21,11 @@ export class App implements OnInit {
     const lang = this.languageService.currentLanguage();
     const labels: Record<string, Record<string, string>> = {
       hanuman: { en: 'Hanuman', hi: 'हनुमान', gu: 'હનુમાન' },
-      shiva:   { en: 'Shiva', hi: 'शिव', gu: 'શિવ' },
-      durga:   { en: 'Durga & Shakti', hi: 'दुर्गा & शक्ति', gu: 'દુર્ગા & શક્તિ' },
-      ganesh:  { en: 'Ganesh', hi: 'गणेश', gu: 'ગણેશ' },
-      vishnu:  { en: 'Vishnu / Ram / Krishna', hi: 'विष्णु / राम / कृष्ण', gu: 'વિષ્ણુ / રામ / કૃષ્ણ' },
-      shani:   { en: 'Shani Dev', hi: 'शनि देव', gu: 'શनि દેવ' },
+      shiva: { en: 'Shiva', hi: 'शिव', gu: 'શિવ' },
+      durga: { en: 'Durga & Shakti', hi: 'दुर्गा & शक्ति', gu: 'દુર્ગા & શક્તિ' },
+      ganesh: { en: 'Ganesh', hi: 'गणेश', gu: 'ગણેશ' },
+      vishnu: { en: 'Vishnu / Ram / Krishna', hi: 'विष्णु / राम / कृष्ण', gu: 'વિષ્ણુ / રામ / કૃષ્ણ' },
+      shani: { en: 'Shani Dev', hi: 'शनि देव', gu: 'શनि દેવ' },
     };
     return Object.entries(labels).map(([value, t]) => ({
       value,
