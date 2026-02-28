@@ -25,6 +25,7 @@ export class VideoCardComponent implements OnInit {
       itemData.name[this.languageService.currentLanguage()];
 
     this.seoService.addVideoSchema({
+      id: itemData.id,
       name: this.getTranslatedName(),
       description: description,
       thumbnailUrl: `https://img.youtube.com/vi/${itemData.youtubeId}/maxresdefault.jpg`,

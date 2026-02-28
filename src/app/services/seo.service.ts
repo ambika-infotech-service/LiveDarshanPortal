@@ -96,36 +96,24 @@ export class SeoService {
   }
 
   /**
-   * Add structured data (JSON-LD) for videos
+   * Upsert a JSON-LD <script> tag identified by a unique id
    */
-  addVideoSchema(videoData: {
-    name: string;
-    description: string;
-    thumbnailUrl: string;
-    uploadDate: string;
-    duration?: string;
-  }): void {
-    const schema = {
-      '@context': 'https://schema.org',
-      '@type': 'VideoObject',
-      name: videoData.name,
-      description: videoData.description,
-      thumbnailUrl: videoData.thumbnailUrl,
-      uploadDate: videoData.uploadDate,
-      ...(videoData.duration && { duration: videoData.duration })
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
+  private upsertJsonLd(id: string, schema: object): void {
+    let script = document.getElementById(id) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = id;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
     script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
   }
 
   /**
-   * Add Organization schema
+   * Add Organization schema (safe to call once; subsequent calls update in place)
    */
   addOrganizationSchema(): void {
-    const schema = {
+    this.upsertJsonLd('schema-organization', {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Live Darshan Portal',
@@ -136,34 +124,88 @@ export class SeoService {
         'https://www.youtube.com/@livedarshanportal',
         'https://www.facebook.com/livedarshanportal'
       ]
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+    });
   }
 
   /**
-   * Add Breadcrumb schema
+   * Add Breadcrumb schema (updates in place on each navigation)
    */
   addBreadcrumbSchema(items: Array<{ name: string; url: string }>): void {
-    const breadcrumbs = items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: item.url
-    }));
-
-    const schema = {
+    this.upsertJsonLd('schema-breadcrumb', {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbs
-    };
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url
+      }))
+    });
+  }
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+  /**
+   * Add/update structured data (JSON-LD) for a video (keyed by videoId to avoid duplicates)
+   */
+  addVideoSchema(videoData: {
+    id: string;
+    name: string;
+    description: string;
+    thumbnailUrl: string;
+    uploadDate: string;
+    duration?: string;
+  }): void {
+    this.upsertJsonLd(`schema-video-${videoData.id}`, {
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: videoData.name,
+      description: videoData.description,
+      thumbnailUrl: videoData.thumbnailUrl,
+      uploadDate: videoData.uploadDate,
+      ...(videoData.duration && { duration: videoData.duration })
+    });
+  }
+
+  // ── Per-page helpers ────────────────────────────────────────────────────────
+
+  setJyotirlingasPageSEO(): void {
+    this.updateSEO({
+      title: '12 Jyotirlingas Live Darshan | Live Darshan Portal',
+      description: 'Watch live darshan of all 12 Jyotirlingas — Somnath, Mahakaleshwar, Omkareshwar, Kashi Vishwanath, Nageshwar and more. Sacred Shiva temples streaming 24/7.',
+      keywords: '12 jyotirlingas live darshan, somnath live stream, mahakaleshwar live, kashi vishwanath live, omkareshwar live, nageshwar live, shiva temple darshan',
+      url: 'https://livedarshan.ambikainfotech.online/jyotirlingas',
+      type: 'website',
+    });
+    this.addBreadcrumbSchema([
+      { name: 'Home', url: 'https://livedarshan.ambikainfotech.online' },
+      { name: '12 Jyotirlingas', url: 'https://livedarshan.ambikainfotech.online/jyotirlingas' },
+    ]);
+  }
+
+  setLocalTemplesPageSEO(): void {
+    this.updateSEO({
+      title: 'Gujarat Temple Live Darshan | Live Darshan Portal',
+      description: 'Watch live darshan of popular Gujarat temples — Ambaji, Umiya Mata Unjha, Salangpur Hanuman, Dwarkadhish Dwarka, Ranchhodrai Dakor and Khodiyar Mandir.',
+      keywords: 'gujarat temples live darshan, ambaji live stream, umiya mata live, salangpur hanuman live, dwarkadhish live, dakor ranchhodrai live, khodiyar mandir',
+      url: 'https://livedarshan.ambikainfotech.online/local-temples',
+      type: 'website',
+    });
+    this.addBreadcrumbSchema([
+      { name: 'Home', url: 'https://livedarshan.ambikainfotech.online' },
+      { name: 'Local Temples', url: 'https://livedarshan.ambikainfotech.online/local-temples' },
+    ]);
+  }
+
+  setDevotionalPageSEO(): void {
+    this.updateSEO({
+      title: 'Devotional Videos — Bhajans, Mantras & Stotrams | Live Darshan Portal',
+      description: 'Watch Hanuman Chalisa, Shiv Tandav Stotram, Ganesh Chalisa, Vishnu Sahasranama, Durga Chalisa, Shani Chalisa and more devotional videos for daily worship.',
+      keywords: 'hanuman chalisa, shiv tandav stotram, ganesh chalisa, vishnu sahasranama, durga chalisa, shani chalisa, bajrang baan, mahamrityunjaya mantra, devotional videos',
+      url: 'https://livedarshan.ambikainfotech.online/devotional',
+      type: 'website',
+    });
+    this.addBreadcrumbSchema([
+      { name: 'Home', url: 'https://livedarshan.ambikainfotech.online' },
+      { name: 'Devotional Videos', url: 'https://livedarshan.ambikainfotech.online/devotional' },
+    ]);
   }
 }

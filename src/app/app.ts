@@ -16,9 +16,6 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     this.seoService.addOrganizationSchema();
-    this.seoService.addBreadcrumbSchema([
-      { name: 'Home', url: 'https://livedarshan.ambikainfotech.online' },
-    ]);
   }
 
   setLanguage(lang: Language) {

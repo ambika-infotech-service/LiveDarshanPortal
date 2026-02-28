@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit, signal } from '@angular/core';
 import { VideoCardComponent } from '../../components/video-card/video-card';
 import { VideoCardsSkeletonComponent } from '../../components/video-cards-skeleton/video-cards-skeleton';
 import { DarshanDataService } from '../../services/darshan-data';
 import { LanguageService } from '../../services/language';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-devotional',
@@ -11,9 +12,10 @@ import { LanguageService } from '../../services/language';
   styleUrl: './devotional.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Devotional {
+export class Devotional implements OnInit {
   private darshanService = inject(DarshanDataService);
   public languageService = inject(LanguageService);
+  private seoService = inject(SeoService);
 
   hanumanVideos = computed(() => this.darshanService.getItemsByDeity('Lord Hanuman'));
   shivaVideos = computed(() => this.darshanService.getItemsByDeity('Lord Shiva'));
@@ -45,4 +47,7 @@ export class Devotional {
     this.activeDeityFilter.set(filter);
   }
 
+  ngOnInit(): void {
+    this.seoService.setDevotionalPageSEO();
+  }
 }
