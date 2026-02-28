@@ -58,6 +58,25 @@ export class App implements OnInit {
     this.darshanService.getItemsByDeity('Lord Shani')
   );
 
+  activeDeityFilter = signal<string>('all');
+
+  deityFilterOptions = computed(() => {
+    const lang = this.languageService.currentLanguage();
+    const labels: Record<string, Record<string, string>> = {
+      all:     { en: 'All', hi: 'सभी', gu: 'બધા' },
+      hanuman: { en: 'Hanuman', hi: 'हनुमान', gu: 'હનુમાન' },
+      shiva:   { en: 'Shiva', hi: 'शिव', gu: 'શિવ' },
+      durga:   { en: 'Durga & Shakti', hi: 'दुर्गा शक्ति', gu: 'દુર્ગા શક્તિ' },
+      ganesh:  { en: 'Ganesh', hi: 'गणेश', gu: 'ગણેશ' },
+      vishnu:  { en: 'Vishnu, Ram & Krishna', hi: 'विष्णु, राम और कृष्ण', gu: 'વિષ્ણુ, રામ અને કૃષ્ણ' },
+      shani:   { en: 'Shani Dev', hi: 'शनि देव', gu: 'શनि દેવ' },
+    };
+    return Object.entries(labels).map(([value, translations]) => ({
+      value,
+      label: translations[lang] ?? translations['en']
+    }));
+  });
+
   ngOnInit(): void {
     // Initialize SEO with organization schema
     this.seoService.addOrganizationSchema();
@@ -70,9 +89,16 @@ export class App implements OnInit {
 
   setActiveTab(tab: string) {
     this.activeTab.set(tab);
+    if (tab !== 'devotional') {
+      this.activeDeityFilter.set('all');
+    }
   }
 
   setLanguage(lang: Language) {
     this.languageService.setLanguage(lang);
+  }
+
+  setDeityFilter(filter: string): void {
+    this.activeDeityFilter.set(filter);
   }
 }

@@ -37,12 +37,12 @@
   </header>
 
   <!-- Main Content -->
-  <main class="container py-5" role="main">
+  <main class="container py-2" role="main">
     <!-- Page Title (hidden but for SEO) -->
     <h1 class="visually-hidden">{{ languageService.translate('title') }} - Watch Live Darshan of 12 Jyotirlingas and Temples</h1>
 
     <!-- Tabs Navigation -->
-    <div class="card mb-4 shadow-sm border-0">
+    <div class="card mb-3 shadow-sm border-0">
       <div class="card-body p-0">
         <ul class="nav nav-tabs nav-fill custom-tabs" role="tablist">
           <li class="nav-item" role="presentation">
@@ -93,10 +93,10 @@
       <!-- 12 Jyotirlingas Tab -->
       @if (activeTab() === 'jyotirlingas') {
         <section id="panel-jyotirlingas" role="tabpanel" aria-labelledby="tab-jyotirlingas">
-          <app-section-heading
+          <!-- <app-section-heading
             [title]="languageService.translate('jyotirlingas')"
             icon="bi-star-fill">
-          </app-section-heading>
+          </app-section-heading> -->
 
           @defer (on viewport) {
             <div class="row">
@@ -113,10 +113,10 @@
       <!-- Local Temples Tab -->
       @if (activeTab() === 'local-temples') {
         <section id="panel-local-temples" role="tabpanel" aria-labelledby="tab-local-temples">
-          <app-section-heading
+          <!-- <app-section-heading
             [title]="languageService.translate('localTemples')"
             icon="bi-building">
-          </app-section-heading>
+          </app-section-heading> -->
 
           @defer (on viewport) {
             <div class="row">
@@ -133,13 +133,27 @@
       <!-- Devotional Videos Tab -->
       @if (activeTab() === 'devotional') {
         <section id="panel-devotional" role="tabpanel" aria-labelledby="tab-devotional">
-          <app-section-heading
-            [title]="languageService.translate('devotionalVideos')"
-            icon="bi-music-note-beamed">
-          </app-section-heading>
+          <div class="position-relative">
+            <!-- <app-section-heading
+              [title]="languageService.translate('devotionalVideos')"
+              icon="bi-music-note-beamed">
+            </app-section-heading> -->
+            <div class="deity-filter-wrapper">
+              <select
+                id="deity-filter"
+                class="form-select form-select-sm w-auto"
+                [value]="activeDeityFilter()"
+                (change)="setDeityFilter($any($event.target).value)"
+                aria-label="Filter devotional videos by deity">
+                @for (opt of deityFilterOptions(); track opt.value) {
+                  <option [value]="opt.value" [selected]="opt.value === activeDeityFilter()">{{ opt.label }}</option>
+                }
+              </select>
+            </div>
+          </div>
 
           <!-- Hanuman Devotion -->
-          @if (hanumanVideos().length > 0) {
+          @if (hanumanVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'hanuman')) {
             <section class="deity-section mb-5" aria-label="Hanuman Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-heart-fill text-danger me-2" aria-hidden="true"></i>
@@ -162,7 +176,7 @@
           }
 
           <!-- Shiva Devotion -->
-          @if (shivaVideos().length > 0) {
+          @if (shivaVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'shiva')) {
             <section class="deity-section mb-5" aria-label="Shiva Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-award-fill text-info me-2" aria-hidden="true"></i>
@@ -185,7 +199,7 @@
           }
 
           <!-- Durga & Shakti Devotion -->
-          @if (durgaVideos().length > 0) {
+          @if (durgaVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'durga')) {
             <section class="deity-section mb-5" aria-label="Durga and Shakti Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-flower1 text-danger me-2" aria-hidden="true"></i>
@@ -208,7 +222,7 @@
           }
 
           <!-- Ganesh Devotion -->
-          @if (ganeshVideos().length > 0) {
+          @if (ganeshVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'ganesh')) {
             <section class="deity-section mb-5" aria-label="Ganesh Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-circle-fill text-warning me-2" aria-hidden="true"></i>
@@ -231,7 +245,7 @@
           }
 
           <!-- Vishnu, Ram & Krishna Devotion -->
-          @if (vishnuVideos().length > 0) {
+          @if (vishnuVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'vishnu')) {
             <section class="deity-section mb-5" aria-label="Vishnu, Ram and Krishna Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-sun-fill text-success me-2" aria-hidden="true"></i>
@@ -254,7 +268,7 @@
           }
 
           <!-- Shani Dev Devotion -->
-          @if (shaniVideos().length > 0) {
+          @if (shaniVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'shani')) {
             <section class="deity-section mb-5" aria-label="Shani Dev Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-star-fill text-primary me-2" aria-hidden="true"></i>
@@ -281,7 +295,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white mt-5 py-4 border-top" role="contentinfo">
+  <footer class="bg-white mt-3 mt-md-5 py-3 py-md-4 border-top" role="contentinfo">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">

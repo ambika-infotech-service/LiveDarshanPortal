@@ -18,6 +18,11 @@
   &:last-child {
     border-bottom: none;
   }
+
+  @media (max-width: 767.98px) {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem !important;
+  }
 }
 
 .deity-heading {
@@ -33,5 +38,32 @@
 
   i {
     vertical-align: middle;
+  }
+
+  @media (max-width: 767.98px) {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+    margin-bottom: 0.75rem !important;
+    font-size: 1.4rem;
+  }
+}
+
+// Deity filter: centred below heading on mobile, absolute in right whitespace on desktop
+.deity-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -0.75rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    margin: 0;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
