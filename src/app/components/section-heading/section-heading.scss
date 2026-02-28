@@ -1,5 +1,5 @@
 .section-title {
-  color: #b45309;
+  color: var(--color-primary-darker);
   font-weight: 700;
   font-size: 2rem;
   padding-bottom: 10px;
@@ -13,7 +13,7 @@
   transform: translateX(-50%);
   width: 60%;
   height: 3px;
-  background: linear-gradient(to right, transparent, #d97706, transparent);
+  background: linear-gradient(to right, transparent, var(--color-primary-dark), transparent);
 }
 
 @media (max-width: 768px) {
@@ -21,3 +21,4 @@
     font-size: 1.5rem;
   }
 }
+

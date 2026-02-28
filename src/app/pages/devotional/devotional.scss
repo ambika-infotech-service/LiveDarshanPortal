@@ -1,7 +1,7 @@
 // Deity section styling
 .deity-section {
   padding: 2rem 0;
-  border-bottom: 2px solid rgba(217, 119, 6, 0.1);
+  border-bottom: 2px solid color-mix(in srgb, var(--color-primary-dark) 10%, transparent);
 
   &:last-child {
     border-bottom: none;
@@ -14,12 +14,12 @@
 }
 
 .deity-heading {
-  color: #d97706;
+  color: var(--color-primary-dark);
   font-weight: 700;
   font-size: 1.75rem;
   text-align: center;
   padding-bottom: 0.5rem;
-  border-bottom: 3px solid #d97706;
+  border-bottom: 3px solid var(--color-primary-dark);
   display: inline-block;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -49,3 +49,4 @@
     margin-bottom: 1.5rem;
   }
 }
+

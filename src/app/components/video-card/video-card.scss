@@ -4,16 +4,16 @@
 
 .darshan-card {
   transition:
-    transform 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out;
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   overflow: hidden;
 }
 
 .darshan-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: var(--shadow-card) !important;
 }
 
 .live-badge {
@@ -28,26 +28,19 @@
 }
 
 @keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
 }
 
 .card-title {
-  color: #d97706;
+  color: var(--color-primary-dark);
   font-weight: 600;
   font-size: 1.1rem;
 }
 
 .card-text i {
   margin-right: 5px;
-  color: #d97706;
+  color: var(--color-primary-dark);
 }
 
 .loading-overlay {
@@ -74,9 +67,10 @@
   align-items: center;
   justify-content: center;
   z-index: 5;
-  border-radius: 8px;
+  border-radius: var(--radius-badge);
   pointer-events: none;
 }
+
 
 .offline-message {
   text-align: center;

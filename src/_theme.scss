@@ -1,0 +1,68 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Live Darshan Portal — Design Tokens
+// ─────────────────────────────────────────────────────────────────────────────
+// CSS custom properties are set on :root so every component can use
+// var(--token) with no @use import required.
+//
+// SCSS variables ($var) are available to any file that does:
+//   @use 'src/theme' as t;     (e.g. for rgba($t.primary, 0.3) at compile-time)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Colour palette ────────────────────────────────────────────────────────────
+$primary:         #f59e0b;   // amber-500
+$primary-dark:    #d97706;   // amber-600
+$primary-darker:  #b45309;   // amber-700
+$primary-light:   #fef3c7;   // amber-100
+$primary-medium:  #fed7aa;   // orange-200
+
+// ── Neutrals ──────────────────────────────────────────────────────────────────
+$text-muted:      #6b7280;   // gray-500
+$bg-white:        #ffffff;
+$bg-track:        #f1f1f1;
+
+// ── Shadows ───────────────────────────────────────────────────────────────────
+$shadow-color:    rgba(217, 119, 6, 0.30);  // primary-dark @ 30 %
+$shadow-card:     rgba(0,   0,   0, 0.15);
+
+// ── Spacing / Shape ───────────────────────────────────────────────────────────
+$radius-card:    12px;
+$radius-badge:    8px;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CSS Custom Properties — injected globally via styles.scss @use
+// ─────────────────────────────────────────────────────────────────────────────
+:root {
+  // Colours
+  --color-primary:         #{$primary};
+  --color-primary-dark:    #{$primary-dark};
+  --color-primary-darker:  #{$primary-darker};
+  --color-primary-light:   #{$primary-light};
+  --color-primary-medium:  #{$primary-medium};
+
+  // Text
+  --color-text-muted:      #{$text-muted};
+
+  // Backgrounds
+  --bg-gradient: linear-gradient(135deg, #{$primary-light} 0%, #{$primary-medium} 100%);
+  --bg-white:              #{$bg-white};
+
+  // Gradients
+  --gradient-primary: linear-gradient(135deg, #{$primary} 0%, #{$primary-dark} 100%);
+
+  // Shadows
+  --shadow-primary: 0 4px 12px #{$shadow-color};
+  --shadow-card:    0 8px 20px #{$shadow-card};
+
+  // Shape
+  --radius-card:   #{$radius-card};
+  --radius-badge:  #{$radius-badge};
+
+  // Transitions
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+
+  // Scrollbar
+  --scrollbar-track: #{$bg-track};
+}
