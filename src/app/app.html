@@ -44,7 +44,7 @@
                                 <span class="nav-deity-badge ms-1">{{ activeDeityLabel() }}</span>
                                 }
                             </a>
-                            <ul class="dropdown-menu nav-dropdown">
+                            <ul class="dropdown-menu nav-dropdown nav-dropdown-grouped">
                                 <li>
                                     <a class="dropdown-item" routerLink="/devotional" [queryParams]="{deity: null}"
                                         queryParamsHandling="merge">
@@ -54,16 +54,21 @@
                                         }
                                     </a>
                                 </li>
+                                @for (group of deityNavGroups(); track group.groupLabel) {
+                                <li><hr class="dropdown-divider"></li>
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <h6 class="dropdown-header nav-dropdown-group-header">
+                                        {{ group.groupLabel }}
+                                    </h6>
                                 </li>
-                                @for (item of deityNavItems(); track item.value) {
+                                @for (item of group.items; track item.value) {
                                 <li>
                                     <a class="dropdown-item" routerLink="/devotional"
                                         [queryParams]="{deity: item.value}">
                                         {{ item.label }}
                                     </a>
                                 </li>
+                                }
                                 }
                             </ul>
                         </li>

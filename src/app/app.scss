@@ -154,7 +154,7 @@
   padding: 0.5rem;
   margin-top: 0.4rem;
   background: #fff;
-  min-width: 180px;
+  min-width: 220px;
 
   .dropdown-item {
     border-radius: 8px;
@@ -175,6 +175,30 @@
     border-color: #f3f4f6;
     margin: 0.3rem 0.5rem;
   }
+}
+
+// Grouped dropdown — scrollable with group headers
+.nav-dropdown-grouped {
+  max-height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d97706 #fef3c7;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track { background: #fef3c7; border-radius: 4px; }
+  &::-webkit-scrollbar-thumb { background: #d97706; border-radius: 4px; }
+}
+
+.nav-dropdown-group-header {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #b45309;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem 0.2rem;
+  margin: 0;
 }
 
 // ── Mobile collapse ───────────────────────────────────────────────────────────
