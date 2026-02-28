@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { DarshanItem } from '../models/darshan.model';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class DarshanDataService {
   * Use channelId for reliable live embeds: https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID
   * The youtubeId still stores the channel handle (e.g., @channelName) for links when needed.
    */
-  private allItems: DarshanItem[] = [
+  private jyotirlingaItems: DarshanItem[] = [
     // 12 Jyotirlingas
     {
       id: 'somnath',
@@ -124,7 +124,9 @@ export class DarshanDataService {
       },
       isLive: true
     },
+  ];
 
+  private localTempleItems: DarshanItem[] = [
     // Local Temples (Gujarat)
     {
       id: 'umiya-mata-unjha',
@@ -281,7 +283,9 @@ export class DarshanDataService {
     //   },
     //   isLive: true
     // },
+  ];
 
+  private devotionalItems: DarshanItem[] = [
     // Devotional Videos
     {
       id: 'hanuman-chalisa',
@@ -999,31 +1003,14 @@ export class DarshanDataService {
     }
   ];
 
-  items = signal<DarshanItem[]>(this.allItems);
-
-  getItemsByCategory(category: string) {
-    return this.allItems.filter(item => item.category === category);
+  getItemsByCategory(category: string): DarshanItem[] {
+    if (category === 'jyotirlinga') return this.jyotirlingaItems;
+    if (category === 'local-temple') return this.localTempleItems;
+    if (category === 'devotional-video') return this.devotionalItems;
+    return [];
   }
 
-  getItemsByDeity(deityName: string) {
-    return this.allItems.filter(item =>
-      item.deity?.en === deityName && item.category === 'devotional-video'
-    );
-  }
-
-  getDevotionalDeities() {
-    const deities = new Set<string>();
-    this.allItems
-      .filter(item => item.category === 'devotional-video')
-      .forEach(item => {
-        if (item.deity?.en) {
-          deities.add(item.deity.en);
-        }
-      });
-    return Array.from(deities);
-  }
-
-  getAllItems() {
-    return this.allItems;
+  getItemsByDeity(deityName: string): DarshanItem[] {
+    return this.devotionalItems.filter(item => item.deity?.en === deityName);
   }
 }

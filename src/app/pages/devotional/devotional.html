@@ -1,0 +1,153 @@
+<section id="panel-devotional" role="main" aria-label="Devotional Videos">
+  <!-- Deity Filter -->
+  <div class="deity-filter-wrapper">
+    <select
+      id="deity-filter"
+      class="form-select form-select-sm w-auto"
+      [value]="activeDeityFilter()"
+      (change)="setDeityFilter($any($event.target).value)"
+      aria-label="Filter devotional videos by deity">
+      @for (opt of deityFilterOptions(); track opt.value) {
+        <option [value]="opt.value" [selected]="opt.value === activeDeityFilter()">{{ opt.label }}</option>
+      }
+    </select>
+  </div>
+
+  <!-- Hanuman Devotion -->
+  @if (hanumanVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'hanuman')) {
+    <section class="deity-section mb-5" aria-label="Hanuman Devotional Videos">
+      <h2 class="deity-heading mb-4">
+        <i class="bi bi-heart-fill text-danger me-2" aria-hidden="true"></i>
+        @switch (languageService.currentLanguage()) {
+          @case ('hi') { हनुमान भक्ति }
+          @case ('gu') { હનુમાન ભક્તિ }
+          @default { Hanuman Devotion }
+        }
+      </h2>
+      @defer (on viewport) {
+        <div class="row">
+          @for (item of hanumanVideos(); track item.id) {
+            <app-video-card [item]="item" />
+          }
+        </div>
+      } @placeholder {
+        <app-video-cards-skeleton />
+      }
+    </section>
+  }
+
+  <!-- Shiva Devotion -->
+  @if (shivaVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'shiva')) {
+    <section class="deity-section mb-5" aria-label="Shiva Devotional Videos">
+      <h2 class="deity-heading mb-4">
+        <i class="bi bi-award-fill text-info me-2" aria-hidden="true"></i>
+        @switch (languageService.currentLanguage()) {
+          @case ('hi') { शिव भक्ति }
+          @case ('gu') { શિવ ભક્તિ }
+          @default { Shiva Devotion }
+        }
+      </h2>
+      @defer (on viewport) {
+        <div class="row">
+          @for (item of shivaVideos(); track item.id) {
+            <app-video-card [item]="item" />
+          }
+        </div>
+      } @placeholder {
+        <app-video-cards-skeleton />
+      }
+    </section>
+  }
+
+  <!-- Durga & Shakti Devotion -->
+  @if (durgaVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'durga')) {
+    <section class="deity-section mb-5" aria-label="Durga and Shakti Devotional Videos">
+      <h2 class="deity-heading mb-4">
+        <i class="bi bi-flower1 text-danger me-2" aria-hidden="true"></i>
+        @switch (languageService.currentLanguage()) {
+          @case ('hi') { दुर्गा शक्ति भक्ति }
+          @case ('gu') { દુર્ગા શક્તિ ભક્તિ }
+          @default { Durga & Shakti Devotion }
+        }
+      </h2>
+      @defer (on viewport) {
+        <div class="row">
+          @for (item of durgaVideos(); track item.id) {
+            <app-video-card [item]="item" />
+          }
+        </div>
+      } @placeholder {
+        <app-video-cards-skeleton />
+      }
+    </section>
+  }
+
+  <!-- Ganesh Devotion -->
+  @if (ganeshVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'ganesh')) {
+    <section class="deity-section mb-5" aria-label="Ganesh Devotional Videos">
+      <h2 class="deity-heading mb-4">
+        <i class="bi bi-circle-fill text-warning me-2" aria-hidden="true"></i>
+        @switch (languageService.currentLanguage()) {
+          @case ('hi') { गणेश भक्ति }
+          @case ('gu') { ગણેશ ભક્તિ }
+          @default { Ganesh Devotion }
+        }
+      </h2>
+      @defer (on viewport) {
+        <div class="row">
+          @for (item of ganeshVideos(); track item.id) {
+            <app-video-card [item]="item" />
+          }
+        </div>
+      } @placeholder {
+        <app-video-cards-skeleton />
+      }
+    </section>
+  }
+
+  <!-- Vishnu, Ram & Krishna Devotion -->
+  @if (vishnuVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'vishnu')) {
+    <section class="deity-section mb-5" aria-label="Vishnu, Ram and Krishna Devotional Videos">
+      <h2 class="deity-heading mb-4">
+        <i class="bi bi-sun-fill text-success me-2" aria-hidden="true"></i>
+        @switch (languageService.currentLanguage()) {
+          @case ('hi') { विष्णु, राम और कृष्ण भक्ति }
+          @case ('gu') { વિષ્ણુ, રામ અને કૃષ્ણ ભક્તિ }
+          @default { Vishnu, Ram & Krishna Devotion }
+        }
+      </h2>
+      @defer (on viewport) {
+        <div class="row">
+          @for (item of vishnuVideos(); track item.id) {
+            <app-video-card [item]="item" />
+          }
+        </div>
+      } @placeholder {
+        <app-video-cards-skeleton />
+      }
+    </section>
+  }
+
+  <!-- Shani Dev Devotion -->
+  @if (shaniVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'shani')) {
+    <section class="deity-section mb-5" aria-label="Shani Dev Devotional Videos">
+      <h2 class="deity-heading mb-4">
+        <i class="bi bi-star-fill text-primary me-2" aria-hidden="true"></i>
+        @switch (languageService.currentLanguage()) {
+          @case ('hi') { शनि देव भक्ति }
+          @case ('gu') { શનિ દેવ ભક્તિ }
+          @default { Shani Dev Devotion }
+        }
+      </h2>
+      @defer (on viewport) {
+        <div class="row">
+          @for (item of shaniVideos(); track item.id) {
+            <app-video-card [item]="item" />
+          }
+        </div>
+      } @placeholder {
+        <app-video-cards-skeleton />
+      }
+    </section>
+  }
+</section>

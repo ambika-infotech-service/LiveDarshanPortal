@@ -1,0 +1,11 @@
+<section id="panel-local-temples" role="main" aria-label="Local Temples">
+  @defer (on viewport) {
+    <div class="row">
+      @for (item of items(); track item.id) {
+        <app-video-card [item]="item" />
+      }
+    </div>
+  } @placeholder {
+    <app-video-cards-skeleton />
+  }
+</section>
