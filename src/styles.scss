@@ -45,19 +45,7 @@ body {
   box-shadow: var(--shadow-primary);
 }
 
-/* Navbar Styles */
-.navbar {
-  padding: 1rem 0;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-  transition: transform var(--transition-base);
-}
-
-.navbar-brand:hover {
-  transform: scale(1.05);
-}
+/* Navbar brand hover — handled in app.scss */
 
 /* Dropdown Menu */
 .dropdown-item {

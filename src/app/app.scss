@@ -1,3 +1,199 @@
 // App Component Specific Styles
 // Colour tokens are available globally via CSS custom properties (src/_theme.scss)
 // Use var(--color-primary), var(--gradient-primary), etc. in any component stylesheet.
+
+// ── Navigation Header ────────────────────────────────────────────────────────
+
+.nav-header {
+  background: linear-gradient(135deg, #b45309 0%, #c96b0a 50%, #d97706 100%);
+  box-shadow: 0 4px 20px rgba(180, 83, 9, 0.45);
+
+  // Top accent line
+  &::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, #fff5 0%, #fff 50%, #fff5 100%);
+    opacity: 0.4;
+  }
+}
+
+.navbar {
+  padding: 0.6rem 0;
+}
+
+// ── Brand ────────────────────────────────────────────────────────────────────
+
+.nav-brand-icon {
+  font-size: 1.7rem;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+  line-height: 1;
+}
+
+.nav-brand-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand:hover .nav-brand-text {
+  color: #fef3c7;
+}
+
+// ── Toggler ──────────────────────────────────────────────────────────────────
+
+.nav-toggler {
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  color: #fff;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: #fff;
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+  }
+}
+
+// ── Nav Pill Links ────────────────────────────────────────────────────────────
+
+.nav-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88) !important;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+
+  i {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  // Active state set by routerLinkActive
+  &.nav-pill-active {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #b45309 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+    i {
+      opacity: 1;
+    }
+  }
+
+  // Dropdown toggle arrow
+  &.dropdown-toggle::after {
+    margin-left: 0.3rem;
+    opacity: 0.7;
+  }
+}
+
+// Language pill — solid white chip for guaranteed contrast on any gradient position
+.nav-lang-btn {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #b45309 !important;
+  border: none;
+  font-weight: 700;
+
+  i {
+    color: #b45309;
+    opacity: 1;
+  }
+
+  &:hover {
+    background: #fff !important;
+    color: #92400e !important;
+    transform: translateY(-1px);
+  }
+}
+
+// ── Deity badge inside nav pill ───────────────────────────────────────────────
+
+.nav-deity-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+}
+
+.nav-pill-active .nav-deity-badge {
+  background: #d97706;
+  color: #fff;
+}
+
+// ── Dropdown Menu ─────────────────────────────────────────────────────────────
+
+.nav-dropdown {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(180, 83, 9, 0.2), 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  background: #fff;
+  min-width: 180px;
+
+  .dropdown-item {
+    border-radius: 8px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #374151;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover,
+    &:focus {
+      background: #fef3c7;
+      color: #b45309;
+    }
+  }
+
+  .dropdown-divider {
+    border-color: #f3f4f6;
+    margin: 0.3rem 0.5rem;
+  }
+}
+
+// ── Mobile collapse ───────────────────────────────────────────────────────────
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 0.75rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0.5rem;
+  }
+
+  .nav-pill-link {
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-lang-btn {
+    width: fit-content;
+  }
+}
