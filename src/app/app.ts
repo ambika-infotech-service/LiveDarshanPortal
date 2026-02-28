@@ -1,13 +1,14 @@
 import { Component, signal, computed, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { VideoCardComponent } from './components/video-card/video-card';
 import { SectionHeadingComponent } from './components/section-heading/section-heading';
+import { VideoCardsSkeletonComponent } from './components/video-cards-skeleton/video-cards-skeleton';
 import { DarshanDataService } from './services/darshan-data';
 import { LanguageService, Language } from './services/language';
 import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
-  imports: [VideoCardComponent, SectionHeadingComponent],
+  imports: [VideoCardComponent, SectionHeadingComponent, VideoCardsSkeletonComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

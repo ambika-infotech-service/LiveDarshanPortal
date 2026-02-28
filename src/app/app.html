@@ -98,11 +98,15 @@
             icon="bi-star-fill">
           </app-section-heading>
 
-          <div class="row">
-            @for (item of jyotirlingaItems(); track item.id) {
-              <app-video-card [item]="item"></app-video-card>
-            }
-          </div>
+          @defer (on viewport) {
+            <div class="row">
+              @for (item of jyotirlingaItems(); track item.id) {
+                <app-video-card [item]="item"></app-video-card>
+              }
+            </div>
+          } @placeholder {
+            <app-video-cards-skeleton />
+          }
         </section>
       }
 
@@ -114,11 +118,15 @@
             icon="bi-building">
           </app-section-heading>
 
-          <div class="row">
-            @for (item of localTempleItems(); track item.id) {
-              <app-video-card [item]="item"></app-video-card>
-            }
-          </div>
+          @defer (on viewport) {
+            <div class="row">
+              @for (item of localTempleItems(); track item.id) {
+                <app-video-card [item]="item"></app-video-card>
+              }
+            </div>
+          } @placeholder {
+            <app-video-cards-skeleton />
+          }
         </section>
       }
 
@@ -141,11 +149,15 @@
                   @default { Hanuman Devotion }
                 }
               </h2>
-              <div class="row">
-                @for (item of hanumanVideos(); track item.id) {
-                  <app-video-card [item]="item"></app-video-card>
-                }
-              </div>
+              @defer (on viewport) {
+                <div class="row">
+                  @for (item of hanumanVideos(); track item.id) {
+                    <app-video-card [item]="item"></app-video-card>
+                  }
+                </div>
+              } @placeholder {
+                <app-video-cards-skeleton />
+              }
             </section>
           }
 
@@ -160,11 +172,15 @@
                   @default { Shiva Devotion }
                 }
               </h2>
-              <div class="row">
-                @for (item of shivaVideos(); track item.id) {
-                  <app-video-card [item]="item"></app-video-card>
-                }
-              </div>
+              @defer (on viewport) {
+                <div class="row">
+                  @for (item of shivaVideos(); track item.id) {
+                    <app-video-card [item]="item"></app-video-card>
+                  }
+                </div>
+              } @placeholder {
+                <app-video-cards-skeleton />
+              }
             </section>
           }
 
@@ -179,11 +195,15 @@
                   @default { Durga & Shakti Devotion }
                 }
               </h2>
-              <div class="row">
-                @for (item of durgaVideos(); track item.id) {
-                  <app-video-card [item]="item"></app-video-card>
-                }
-              </div>
+              @defer (on viewport) {
+                <div class="row">
+                  @for (item of durgaVideos(); track item.id) {
+                    <app-video-card [item]="item"></app-video-card>
+                  }
+                </div>
+              } @placeholder {
+                <app-video-cards-skeleton />
+              }
             </section>
           }
 
@@ -198,11 +218,15 @@
                   @default { Ganesh Devotion }
                 }
               </h2>
-              <div class="row">
-                @for (item of ganeshVideos(); track item.id) {
-                  <app-video-card [item]="item"></app-video-card>
-                }
-              </div>
+              @defer (on viewport) {
+                <div class="row">
+                  @for (item of ganeshVideos(); track item.id) {
+                    <app-video-card [item]="item"></app-video-card>
+                  }
+                </div>
+              } @placeholder {
+                <app-video-cards-skeleton />
+              }
             </section>
           }
 
@@ -217,11 +241,15 @@
                   @default { Vishnu, Ram & Krishna Devotion }
                 }
               </h2>
-              <div class="row">
-                @for (item of vishnuVideos(); track item.id) {
-                  <app-video-card [item]="item"></app-video-card>
-                }
-              </div>
+              @defer (on viewport) {
+                <div class="row">
+                  @for (item of vishnuVideos(); track item.id) {
+                    <app-video-card [item]="item"></app-video-card>
+                  }
+                </div>
+              } @placeholder {
+                <app-video-cards-skeleton />
+              }
             </section>
           }
 
@@ -236,11 +264,15 @@
                   @default { Shani Dev Devotion }
                 }
               </h2>
-              <div class="row">
-                @for (item of shaniVideos(); track item.id) {
-                  <app-video-card [item]="item"></app-video-card>
-                }
-              </div>
+              @defer (on viewport) {
+                <div class="row">
+                  @for (item of shaniVideos(); track item.id) {
+                    <app-video-card [item]="item"></app-video-card>
+                  }
+                </div>
+              } @placeholder {
+                <app-video-cards-skeleton />
+              }
             </section>
           }
         </section>
