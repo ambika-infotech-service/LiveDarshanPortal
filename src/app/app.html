@@ -30,12 +30,39 @@
                                 {{ languageService.translate('localTemples') }}
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLink="/devotional" routerLinkActive="active fw-semibold"
-                                [attr.aria-current]="'page'">
+                        <li class="nav-item dropdown" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: false}">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                data-bs-auto-close="true" aria-expanded="false" role="button"
+                                (click)="$event.preventDefault()" aria-label="Devotional videos menu">
                                 <i class="bi bi-music-note-beamed me-1" aria-hidden="true"></i>
                                 {{ languageService.translate('devotionalVideos') }}
+                                @if (activeDeityLabel()) {
+                                <span class="text-warning fw-semibold ms-1">({{ activeDeityLabel() }})</span>
+                                }
                             </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" routerLink="/devotional" [queryParams]="{deity: null}"
+                                        queryParamsHandling="merge">
+                                        <i class="bi bi-grid me-2" aria-hidden="true"></i>
+                                        @switch (languageService.currentLanguage()) {
+                                        @case ('hi') { सभी } @case ('gu') { બધા } @default { All }
+                                        }
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                @for (item of deityNavItems(); track item.value) {
+                                <li>
+                                    <a class="dropdown-item" routerLink="/devotional"
+                                        [queryParams]="{deity: item.value}">
+                                        {{ item.label }}
+                                    </a>
+                                </li>
+                                }
+                            </ul>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
@@ -44,26 +71,26 @@
                                 aria-expanded="false" aria-label="Language selection">
                                 <i class="bi bi-globe" aria-hidden="true"></i>
                                 @switch (languageService.currentLanguage()) {
-                                @case ('en') {
-                                English
+                                @case ('gu') {
+                                ગુજરાતી
                                 }
                                 @case ('hi') {
                                 हिंदी
                                 }
-                                @case ('gu') {
-                                ગુજરાતી
+                                @case ('en') {
+                                English
                                 }
                                 }
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <a class="dropdown-item" (click)="setLanguage('en')" role="button">English</a>
+                                    <a class="dropdown-item" (click)="setLanguage('gu')" role="button">ગુજરાતી</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" (click)="setLanguage('hi')" role="button">हिंदी</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" (click)="setLanguage('gu')" role="button">ગુજરાતી</a>
+                                    <a class="dropdown-item" (click)="setLanguage('en')" role="button">English</a>
                                 </li>
                             </ul>
                         </li>

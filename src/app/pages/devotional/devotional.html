@@ -1,15 +1,4 @@
 <section id="panel-devotional" role="main" aria-label="Devotional Videos">
-    <!-- Deity Filter -->
-    <div class="deity-filter-wrapper">
-        <select id="deity-filter" class="form-select form-select-sm w-auto" [value]="activeDeityFilter()"
-            (change)="setDeityFilter($any($event.target).value)" aria-label="Filter devotional videos by deity">
-            @for (opt of deityFilterOptions(); track opt.value) {
-            <option [value]="opt.value" [selected]="opt.value === activeDeityFilter()">
-                {{ opt.label }}
-            </option>
-            }
-        </select>
-    </div>
 
     <!-- Hanuman Devotion -->
     @if (

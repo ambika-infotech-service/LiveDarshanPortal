@@ -37,16 +37,3 @@
     font-size: 1.4rem;
   }
 }
-
-// Deity filter: centred below heading on mobile, floating right on desktop
-.deity-filter-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-
-  @media (min-width: 768px) {
-    justify-content: flex-end;
-    margin-bottom: 1.5rem;
-  }
-}
-
