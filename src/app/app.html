@@ -1,33 +1,105 @@
 <!-- Live Darshan Portal -->
-<div class="min-vh-100" style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);">
+<div class="min-vh-100" style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%)">
   <!-- Header -->
   <header class="bg-white shadow-sm sticky-top" role="banner">
-    <nav class="navbar navbar-expand-lg navbar-light" role="navigation" aria-label="Main navigation">
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Live Darshan Portal Home">
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="/"
+          aria-label="Live Darshan Portal Home"
+        >
           <i class="bi bi-brightness-high-fill text-warning me-2 fs-3" aria-hidden="true"></i>
           <span class="fw-bold text-primary">{{ languageService.translate('title') }}</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <button
+                [class]="'nav-link ' + (activeTab() === 'jyotirlingas' ? 'active fw-semibold' : '')"
+                (click)="setActiveTab('jyotirlingas')"
+                type="button"
+                [attr.aria-current]="activeTab() === 'jyotirlingas' ? 'page' : null"
+              >
+                <i class="bi bi-star-fill me-1" aria-hidden="true"></i>
+                {{ languageService.translate('jyotirlingas') }}
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                [class]="
+                  'nav-link ' + (activeTab() === 'local-temples' ? 'active fw-semibold' : '')
+                "
+                (click)="setActiveTab('local-temples')"
+                type="button"
+                [attr.aria-current]="activeTab() === 'local-temples' ? 'page' : null"
+              >
+                <i class="bi bi-building me-1" aria-hidden="true"></i>
+                {{ languageService.translate('localTemples') }}
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                [class]="'nav-link ' + (activeTab() === 'devotional' ? 'active fw-semibold' : '')"
+                (click)="setActiveTab('devotional')"
+                type="button"
+                [attr.aria-current]="activeTab() === 'devotional' ? 'page' : null"
+              >
+                <i class="bi bi-music-note-beamed me-1" aria-hidden="true"></i>
+                {{ languageService.translate('devotionalVideos') }}
+              </button>
+            </li>
+          </ul>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Language selection">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-label="Language selection"
+              >
                 <i class="bi bi-globe" aria-hidden="true"></i>
                 @switch (languageService.currentLanguage()) {
-                  @case ('en') { English }
-                  @case ('hi') { हिंदी }
-                  @case ('gu') { ગુજરાતી }
+                  @case ('en') {
+                    English
+                  }
+                  @case ('hi') {
+                    हिंदी
+                  }
+                  @case ('gu') {
+                    ગુજરાતી
+                  }
                 }
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" (click)="setLanguage('en')" role="button">English</a></li>
-                <li><a class="dropdown-item" (click)="setLanguage('hi')" role="button">हिंदी</a></li>
-                <li><a class="dropdown-item" (click)="setLanguage('gu')" role="button">ગુજરાતી</a></li>
+                <li>
+                  <a class="dropdown-item" (click)="setLanguage('en')" role="button">English</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="setLanguage('hi')" role="button">हिंदी</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="setLanguage('gu')" role="button">ગુજરાતી</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -39,54 +111,9 @@
   <!-- Main Content -->
   <main class="container py-2" role="main">
     <!-- Page Title (hidden but for SEO) -->
-    <h1 class="visually-hidden">{{ languageService.translate('title') }} - Watch Live Darshan of 12 Jyotirlingas and Temples</h1>
-
-    <!-- Tabs Navigation -->
-    <div class="card mb-3 shadow-sm border-0">
-      <div class="card-body p-0">
-        <ul class="nav nav-tabs nav-fill custom-tabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button
-              [class]="'nav-link ' + (activeTab() === 'jyotirlingas' ? 'active' : '')"
-              (click)="setActiveTab('jyotirlingas')"
-              type="button"
-              [attr.id]="'tab-jyotirlingas'"
-              [attr.aria-selected]="activeTab() === 'jyotirlingas'"
-              [attr.aria-controls]="'panel-jyotirlingas'"
-              role="tab">
-              <i class="bi bi-star-fill me-2" aria-hidden="true"></i>
-              {{ languageService.translate('jyotirlingas') }}
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              [class]="'nav-link ' + (activeTab() === 'local-temples' ? 'active' : '')"
-              (click)="setActiveTab('local-temples')"
-              type="button"
-              [attr.id]="'tab-local-temples'"
-              [attr.aria-selected]="activeTab() === 'local-temples'"
-              [attr.aria-controls]="'panel-local-temples'"
-              role="tab">
-              <i class="bi bi-building me-2" aria-hidden="true"></i>
-              {{ languageService.translate('localTemples') }}
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              [class]="'nav-link ' + (activeTab() === 'devotional' ? 'active' : '')"
-              (click)="setActiveTab('devotional')"
-              type="button"
-              [attr.id]="'tab-devotional'"
-              [attr.aria-selected]="activeTab() === 'devotional'"
-              [attr.aria-controls]="'panel-devotional'"
-              role="tab">
-              <i class="bi bi-music-note-beamed me-2" aria-hidden="true"></i>
-              {{ languageService.translate('devotionalVideos') }}
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <h1 class="visually-hidden">
+      {{ languageService.translate('title') }} - Watch Live Darshan of 12 Jyotirlingas and Temples
+    </h1>
 
     <!-- Tab Content -->
     <div class="tab-content" role="tabpanel">
@@ -144,23 +171,35 @@
                 class="form-select form-select-sm w-auto"
                 [value]="activeDeityFilter()"
                 (change)="setDeityFilter($any($event.target).value)"
-                aria-label="Filter devotional videos by deity">
+                aria-label="Filter devotional videos by deity"
+              >
                 @for (opt of deityFilterOptions(); track opt.value) {
-                  <option [value]="opt.value" [selected]="opt.value === activeDeityFilter()">{{ opt.label }}</option>
+                  <option [value]="opt.value" [selected]="opt.value === activeDeityFilter()">
+                    {{ opt.label }}
+                  </option>
                 }
               </select>
             </div>
           </div>
 
           <!-- Hanuman Devotion -->
-          @if (hanumanVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'hanuman')) {
+          @if (
+            hanumanVideos().length > 0 &&
+            (activeDeityFilter() === 'all' || activeDeityFilter() === 'hanuman')
+          ) {
             <section class="deity-section mb-5" aria-label="Hanuman Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-heart-fill text-danger me-2" aria-hidden="true"></i>
                 @switch (languageService.currentLanguage()) {
-                  @case ('hi') { हनुमान भक्ति }
-                  @case ('gu') { હનુમાન ભક્તિ }
-                  @default { Hanuman Devotion }
+                  @case ('hi') {
+                    हनुमान भक्ति
+                  }
+                  @case ('gu') {
+                    હનુમાન ભક્તિ
+                  }
+                  @default {
+                    Hanuman Devotion
+                  }
                 }
               </h2>
               @defer (on viewport) {
@@ -176,14 +215,23 @@
           }
 
           <!-- Shiva Devotion -->
-          @if (shivaVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'shiva')) {
+          @if (
+            shivaVideos().length > 0 &&
+            (activeDeityFilter() === 'all' || activeDeityFilter() === 'shiva')
+          ) {
             <section class="deity-section mb-5" aria-label="Shiva Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-award-fill text-info me-2" aria-hidden="true"></i>
                 @switch (languageService.currentLanguage()) {
-                  @case ('hi') { शिव भक्ति }
-                  @case ('gu') { શિવ ભક્તિ }
-                  @default { Shiva Devotion }
+                  @case ('hi') {
+                    शिव भक्ति
+                  }
+                  @case ('gu') {
+                    શિવ ભક્તિ
+                  }
+                  @default {
+                    Shiva Devotion
+                  }
                 }
               </h2>
               @defer (on viewport) {
@@ -199,14 +247,23 @@
           }
 
           <!-- Durga & Shakti Devotion -->
-          @if (durgaVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'durga')) {
+          @if (
+            durgaVideos().length > 0 &&
+            (activeDeityFilter() === 'all' || activeDeityFilter() === 'durga')
+          ) {
             <section class="deity-section mb-5" aria-label="Durga and Shakti Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-flower1 text-danger me-2" aria-hidden="true"></i>
                 @switch (languageService.currentLanguage()) {
-                  @case ('hi') { दुर्गा शक्ति भक्ति }
-                  @case ('gu') { દુર્ગા શક્તિ ભક્તિ }
-                  @default { Durga & Shakti Devotion }
+                  @case ('hi') {
+                    दुर्गा शक्ति भक्ति
+                  }
+                  @case ('gu') {
+                    દુર્ગા શક્તિ ભક્તિ
+                  }
+                  @default {
+                    Durga & Shakti Devotion
+                  }
                 }
               </h2>
               @defer (on viewport) {
@@ -222,14 +279,23 @@
           }
 
           <!-- Ganesh Devotion -->
-          @if (ganeshVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'ganesh')) {
+          @if (
+            ganeshVideos().length > 0 &&
+            (activeDeityFilter() === 'all' || activeDeityFilter() === 'ganesh')
+          ) {
             <section class="deity-section mb-5" aria-label="Ganesh Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-circle-fill text-warning me-2" aria-hidden="true"></i>
                 @switch (languageService.currentLanguage()) {
-                  @case ('hi') { गणेश भक्ति }
-                  @case ('gu') { ગણેશ ભક્તિ }
-                  @default { Ganesh Devotion }
+                  @case ('hi') {
+                    गणेश भक्ति
+                  }
+                  @case ('gu') {
+                    ગણેશ ભક્તિ
+                  }
+                  @default {
+                    Ganesh Devotion
+                  }
                 }
               </h2>
               @defer (on viewport) {
@@ -245,14 +311,26 @@
           }
 
           <!-- Vishnu, Ram & Krishna Devotion -->
-          @if (vishnuVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'vishnu')) {
-            <section class="deity-section mb-5" aria-label="Vishnu, Ram and Krishna Devotional Videos">
+          @if (
+            vishnuVideos().length > 0 &&
+            (activeDeityFilter() === 'all' || activeDeityFilter() === 'vishnu')
+          ) {
+            <section
+              class="deity-section mb-5"
+              aria-label="Vishnu, Ram and Krishna Devotional Videos"
+            >
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-sun-fill text-success me-2" aria-hidden="true"></i>
                 @switch (languageService.currentLanguage()) {
-                  @case ('hi') { विष्णु, राम और कृष्ण भक्ति }
-                  @case ('gu') { વિષ્ણુ, રામ અને કૃષ્ણ ભક્તિ }
-                  @default { Vishnu, Ram & Krishna Devotion }
+                  @case ('hi') {
+                    विष्णु, राम और कृष्ण भक्ति
+                  }
+                  @case ('gu') {
+                    વિષ્ણુ, રામ અને કૃષ્ણ ભક્તિ
+                  }
+                  @default {
+                    Vishnu, Ram & Krishna Devotion
+                  }
                 }
               </h2>
               @defer (on viewport) {
@@ -268,14 +346,23 @@
           }
 
           <!-- Shani Dev Devotion -->
-          @if (shaniVideos().length > 0 && (activeDeityFilter() === 'all' || activeDeityFilter() === 'shani')) {
+          @if (
+            shaniVideos().length > 0 &&
+            (activeDeityFilter() === 'all' || activeDeityFilter() === 'shani')
+          ) {
             <section class="deity-section mb-5" aria-label="Shani Dev Devotional Videos">
               <h2 class="deity-heading mb-4">
                 <i class="bi bi-star-fill text-primary me-2" aria-hidden="true"></i>
                 @switch (languageService.currentLanguage()) {
-                  @case ('hi') { शनि देव भक्ति }
-                  @case ('gu') { શનિ દેવ ભક્તિ }
-                  @default { Shani Dev Devotion }
+                  @case ('hi') {
+                    शनि देव भक्ति
+                  }
+                  @case ('gu') {
+                    શનિ દેવ ભક્તિ
+                  }
+                  @default {
+                    Shani Dev Devotion
+                  }
                 }
               </h2>
               @defer (on viewport) {
@@ -294,6 +381,56 @@
     </div>
   </main>
 
+  <!-- Tabs Navigation -->
+  <div class="card mb-3 shadow-sm border-0">
+    <div class="card-body p-0">
+      <ul class="nav nav-tabs nav-fill custom-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            [class]="'nav-link ' + (activeTab() === 'jyotirlingas' ? 'active' : '')"
+            (click)="setActiveTab('jyotirlingas')"
+            type="button"
+            [attr.id]="'tab-jyotirlingas'"
+            [attr.aria-selected]="activeTab() === 'jyotirlingas'"
+            [attr.aria-controls]="'panel-jyotirlingas'"
+            role="tab"
+          >
+            <i class="bi bi-star-fill me-2" aria-hidden="true"></i>
+            {{ languageService.translate('jyotirlingas') }}
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            [class]="'nav-link ' + (activeTab() === 'local-temples' ? 'active' : '')"
+            (click)="setActiveTab('local-temples')"
+            type="button"
+            [attr.id]="'tab-local-temples'"
+            [attr.aria-selected]="activeTab() === 'local-temples'"
+            [attr.aria-controls]="'panel-local-temples'"
+            role="tab"
+          >
+            <i class="bi bi-building me-2" aria-hidden="true"></i>
+            {{ languageService.translate('localTemples') }}
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            [class]="'nav-link ' + (activeTab() === 'devotional' ? 'active' : '')"
+            (click)="setActiveTab('devotional')"
+            type="button"
+            [attr.id]="'tab-devotional'"
+            [attr.aria-selected]="activeTab() === 'devotional'"
+            [attr.aria-controls]="'panel-devotional'"
+            role="tab"
+          >
+            <i class="bi bi-music-note-beamed me-2" aria-hidden="true"></i>
+            {{ languageService.translate('devotionalVideos') }}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="bg-white mt-3 mt-md-5 py-3 py-md-4 border-top" role="contentinfo">
     <div class="container">
@@ -301,18 +438,26 @@
         <div class="col-12 text-center">
           <p class="text-muted mb-2">
             <i class="bi bi-heart-fill text-danger" aria-hidden="true"></i>
-            Ambika Infotech © 2026 - Watch Live Darshan of 12 Jyotirlingas and More. Designed and developed by
-            <a href="https://ambikainfotech.online" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-primary">Ambika Infotech</a>
+            Ambika Infotech © 2026 - Watch Live Darshan of 12 Jyotirlingas and More. Designed and
+            developed by
+            <a
+              href="https://ambikainfotech.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-primary"
+              >Ambika Infotech</a
+            >
           </p>
 
           <p class="text-muted small mb-0">
             <i class="bi bi-envelope" aria-hidden="true"></i>
             If you have any issues or suggestions, please email us at
-            <a href="mailto:psmit972@gmail.com" class="text-decoration-none text-primary">psmit972@gmail.com</a>
+            <a href="mailto:psmit972@gmail.com" class="text-decoration-none text-primary"
+              >psmit972@gmail.com</a
+            >
           </p>
         </div>
       </div>
     </div>
   </footer>
 </div>
-
