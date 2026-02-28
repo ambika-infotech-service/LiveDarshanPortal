@@ -1,0 +1,48 @@
+# Live Darshan Portal
+
+> Free 24/7 live streaming platform for Hindu temple darshan and devotional content. Watch live video feeds of sacred temples from anywhere in the world.
+
+## About
+
+Live Darshan Portal is a web application that provides live YouTube stream embeds from Hindu temples across India. The site supports three languages: English, Hindi (हिंदी), and Gujarati (ગુજરાતી). All content is free and ad-free.
+
+## Pages
+
+### [12 Jyotirlingas Live Darshan](https://livedarshan.ambikainfotech.online/jyotirlingas)
+
+Live darshan streams from 5 of the 12 sacred Jyotirlinga temples of Lord Shiva:
+
+- **Somnath Temple** — Prabhas Patan, Gujarat
+- **Mahakaleshwar Temple** — Ujjain, Madhya Pradesh
+- **Omkareshwar Temple** — Khandwa, Madhya Pradesh
+- **Kashi Vishwanath Temple** — Varanasi, Uttar Pradesh
+- **Nageshwar Jyotirlinga** — Dwarka, Gujarat
+
+### [Gujarat Temple Live Darshan](https://livedarshan.ambikainfotech.online/local-temples)
+
+Live darshan streams from popular Gujarat temples:
+
+- **Umiya Mata Temple** — Unjha, Gujarat
+- **Ambaji Temple** — Ambaji, Gujarat
+- **Salangpur Hanuman Temple** (Kashtabhanjan Hanumanji) — Salangpur, Gujarat
+- **Dwarkadhish Temple** — Dwarka, Gujarat
+- **Ranchhodrai Temple** — Dakor, Gujarat
+- **Khodiyar Mandir** — Rajpara, Gujarat
+
+### [Devotional Videos](https://livedarshan.ambikainfotech.online/devotional)
+
+Curated devotional videos filterable by deity:
+
+- **Lord Hanuman**: Hanuman Chalisa, Bajrang Baan, Sankat Mochan Hanuman Ashtak, Hanuman Aarti
+- **Lord Shiva**: Shiv Tandav Stotram, Mahamrityunjaya Mantra, Om Namah Shivaya, Shiv Aarti
+- **Goddess Durga**: Durga Chalisa, Kali Chalisa, Lalita Sahasranama, Devi Kavach
+- **Lord Ganesh**: Ganesh Chalisa, Ganesh Aarti, Vakratunda Mahakaya Mantra, Ganpati Atharvashirsha
+- **Lord Vishnu / Ram / Krishna**: Vishnu Sahasranama, Ram Raksha Stotra, Hare Krishna Mahamantra, Shri Ram Aarti
+- **Lord Shani**: Shani Chalisa, Shani Aarti, Shani Beej Mantra, Shani Mahamantra
+
+## Technical
+
+- Built with Angular 21 (standalone components, lazy-loaded routes)
+- Multilingual: English, Hindi, Gujarati
+- All video content is embedded from YouTube
+- No user data collected; no login required

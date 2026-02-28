@@ -1,7 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage (redirects to /jyotirlingas) -->
+  <url>
+    <loc>https://livedarshan.ambikainfotech.online/</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 12 Jyotirlingas -->
+  <url>
+    <loc>https://livedarshan.ambikainfotech.online/jyotirlingas</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCT1egsvA08YcdMLiEu1DTRg/maxresdefault.jpg</image:loc>
+      <image:title>Somnath Temple Live Darshan - Jyotirlinga</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCiH1r_BDhmHU4_CXX2mlcXw/maxresdefault.jpg</image:loc>
+      <image:title>Mahakaleshwar Temple Live Darshan - Jyotirlinga</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCsIZ3yYwCW4316fPX3V-4lg/maxresdefault.jpg</image:loc>
+      <image:title>Omkareshwar Temple Live Darshan - Jyotirlinga</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCdMj2twWfMHXrWgX5oVdoyA/maxresdefault.jpg</image:loc>
+      <image:title>Kashi Vishwanath Temple Live Darshan - Jyotirlinga</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UChehm1WKmChFGvnwhYurctg/maxresdefault.jpg</image:loc>
+      <image:title>Nageshwar Jyotirlinga Live Darshan</image:title>
+    </image:image>
+  </url>
+
+  <!-- Local Temples (Gujarat) -->
+  <url>
+    <loc>https://livedarshan.ambikainfotech.online/local-temples</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCJhH7NV0ArTSUA3r4uXnGCw/maxresdefault.jpg</image:loc>
+      <image:title>Umiya Mata Temple Unjha Live Darshan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCUge9PCf1By7w1DEP95xXoA/maxresdefault.jpg</image:loc>
+      <image:title>Ambaji Temple Live Darshan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCI1r_MNxzyvUPHyTdWDe4NA/maxresdefault.jpg</image:loc>
+      <image:title>Salangpur Hanuman Temple Live Darshan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCBAvMHZO3BIfMMhOK9LMOYQ/maxresdefault.jpg</image:loc>
+      <image:title>Dwarkadhish Temple Live Darshan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCFJGjnmIvcZVNkOggfYKp3A/maxresdefault.jpg</image:loc>
+      <image:title>Ranchhodrai Temple Dakor Live Darshan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/UCo7bpO8VR_DRB1E4GI5qswA/maxresdefault.jpg</image:loc>
+      <image:title>Khodiyar Mandir Live Darshan</image:title>
+    </image:image>
+  </url>
+
+  <!-- Devotional Videos -->
+  <url>
+    <loc>https://livedarshan.ambikainfotech.online/devotional</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/AETFvQonfV8/maxresdefault.jpg</image:loc>
+      <image:title>Hanuman Chalisa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/hMBKmQEPNzI/maxresdefault.jpg</image:loc>
+      <image:title>Shiv Tandav Stotram</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/AXvmt88JLWg/maxresdefault.jpg</image:loc>
+      <image:title>Durga Chalisa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/WyHFSjN0miU/maxresdefault.jpg</image:loc>
+      <image:title>Ganesh Chalisa</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/zKC17254flc/maxresdefault.jpg</image:loc>
+      <image:title>Vishnu Sahasranama</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://img.youtube.com/vi/MJ14wONWjWg/maxresdefault.jpg</image:loc>
+      <image:title>Shani Chalisa</image:title>
+    </image:image>
+  </url>
+
+</urlset>
 
   <!-- Homepage -->
   <url>
