@@ -1674,74 +1674,65 @@ export class DarshanDataService {
   ];
 
   /**
-   * Maps each category/filter key → array of devotional item IDs.
-   * Items can appear in multiple categories (e.g. cross-cut mantra sub-categories).
-   * Empty arrays are intentional placeholders — sections are hidden when empty.
+   * Maps item.deity.en → category key.
+   * Adding a new video only requires the correct deity.en — nothing else to update.
    */
-  private readonly categoryMap: Record<string, string[]> = {
-    // ── Main Deities ────────────────────────────────────────────────────────
-    'hanuman':   ['hanuman-chalisa', 'hanuman-chalisa-fast', 'bajrang-baan', 'bajrang-baan-fast',
-                  'sankat-mochan-ashtak', 'sankat-mochan-ashtak-fast', 'hanuman-aarti'],
-    'shiva':     ['shiv-tandav-stotram', 'mahamrityunjaya-mantra', 'om-namah-shivaya', 'shiv-aarti'],
-    'durga':     ['durga-chalisa', 'kali-chalisa', 'lalita-sahasranama', 'devi-kavach'],
-    'ganesh':    ['ganesh-chalisa', 'ganesh-chalisa-fast', 'ganesh-aarti', 'vakratunda-mantra', 'ganpati-atharvashirsha'],
-    'vishnu':    ['vishnu-sahasranama'],
-    'krishna':   ['hare-krishna-mahamantra', 'hare-krishna-mahamantra-fast', 'govind-bolo-hari-gopal'],
-    'ram':       ['ram-raksha-stotra', 'ram-raksha-stotra-fast', 'shri-ram-aarti', 'ram-rameti-manorame'],
-    'shani':     ['shani-chalisa', 'shani-chalisa-fast', 'shani-aarti', 'shani-aarti-fast', 'shani-beej-mantra', 'shani-mahamantra'],
-    'lakshmi':   ['mahalakshmi-om-shreem-108', 'mahalakshmi-mantra-108', 'kubera-ashta-lakshmi-108', 'mahalakshmi-mantra-108-v2', 'mahalakshmi-mantra-fast', 'lakshmi-mata-aarti-fast'],
-    'saraswati': ['saraswati-mantra-fast-108', 'saraswati-mantra-108', 'ya-kundendu-tusharahara', 'saraswati-chalisa-super-fast', 'neel-saraswati-stotram', 'shri-saraswati-stuti', 'saraswati-mata-aarti'],
-    'kali':      ['kali-chalisa'],
-    'ambe':      ['ambaji-mantra-jaap-108', 'sarva-mangal-mangalye', 'durga-mantra-108-ambe', 'maa-durga-mantra', 'durga-kavach-ambe', 'mahishasura-mardini-stotram', 'bol-mari-ambe-dhun', 'ambe-durga-chalisa'],
-
-    // ── Nav Grah ─────────────────────────────────────────────────────────────
-    'surya':   ['surya-tantrik-beej-108', 'om-sum-suryaya-108', 'om-ghrini-suryaya-108', 'surya-gayatri-108', 'om-ghrini-aditya-108', 'surya-mantra-jaap-108', 'om-sum-suryaya-1008', 'surya-graha-shanti-108'],
-    'chandra': ['chandra-beej-mantra-108', 'chandra-beej-mantra-fast-108', 'chandra-stotram', 'chandra-beej-mantra-fast-108-v2', 'purnima-stotram', 'chandra-gayatri-108', 'chandra-mantra-108'],
-    'mangal':  ['mangal-mantra-108', 'mangal-mantra-fast-108', 'mangal-beej-mantra-108', 'mangal-stotra'],
-    'budh':    ['budh-mantra-108', 'budh-beej-mantra-108', 'budh-mantra-1008', 'budh-shanti-mantra-108', 'budha-stotram', 'budh-kavach'],
-    'guru':    ['guru-bij-mantra-108', 'brihaspati-mantra-108', 'guru-gayatri-108', 'guru-mantra-1008', 'guru-beej-mantra', 'guru-beej-mantra-108', 'brihaspati-mantra-108-v2'],
-    'shukra':  ['shukra-mantra-108', 'shukra-beej-mantra-108', 'shukra-om-bharghavay-108', 'shukra-kavacha-stotram', 'shukra-mantra-1008', 'shukra-mantra-108-v2', 'shri-shukra-kavacham', 'shukra-stotra', 'shukra-tantrik-beej-108'],
-    'rahu':    ['rahu-mantra-108', 'rahu-beej-mantra-108', 'rahu-stotram', 'rahu-mantra-1008', 'rahu-chalisa', 'rahu-kavacham'],
-    'ketu':    ['ketu-mantra-108', 'ketu-mantra-1008', 'ketu-kavacham', 'ketu-tantrik-beej'],
-
-    // ── Mantra & Stotra (cross-listed; shown only when explicitly filtered) ──
-    'hanuman-chalisa':    ['hanuman-chalisa', 'hanuman-chalisa-fast'],
-    'shiv-tandav':        ['shiv-tandav-stotram'],
-    'mahamrityunjaya':    ['mahamrityunjaya-mantra'],
-    'vishnu-sahasranama': ['vishnu-sahasranama'],
-    'ram-raksha':         ['ram-raksha-stotra', 'ram-raksha-stotra-fast'],
-    'durga-saptashati':   [],
-    'nav-grah-mantra':    [],
-    'beej-mantra':        [],
-    'gayatri':            [],
-
-    // ── Daily & Utility Bhakti ────────────────────────────────────────────────
-    'morning-prayer': [],
-    'evening-aarti':  [],
-    'aarti':          [],
-    'bhajan':         [],
-    'meditation':     [],
-    '108-mantra':     [],
-    'live-mantra':    [],
-
-    // ── Festival & Special ───────────────────────────────────────────────────
-    'navratri':          [],
-    'shravan':           [],
-    'janmashtami':       [],
-    'ram-navami':        [],
-    'ganesh-chaturthi':  [],
-    'shivratri':         [],
-    'diwali':            [],
-    'hanuman-jayanti':   [],
-
-    // ── Scripture & Katha ────────────────────────────────────────────────────
-    'sundarkand':    [],
-    'gita':          [],
-    'shiv-puran':    [],
-    'ramayan':       [],
-    'devi-bhagwat':  [],
-    'vrat':          [],
+  private readonly DEITY_KEY_MAP: Record<string, string> = {
+    'Lord Hanuman': 'hanuman',
+    'Lord Shiva': 'shiva',
+    'Goddess Durga': 'durga',
+    'Lord Ganesh': 'ganesh',
+    'Lord Vishnu': 'vishnu',
+    'Lord Krishna': 'krishna',
+    'Lord Ram': 'ram',
+    'Lord Shani': 'shani',
+    'Lakshmi': 'lakshmi',
+    'Saraswati': 'saraswati',
+    'Ambe Mata': 'ambe',
+    'Surya Grah': 'surya',
+    'Chandra Grah': 'chandra',
+    'Mangal Grah': 'mangal',
+    'Budh Grah': 'budh',
+    'Guru Grah': 'guru',
+    'Shukra Grah': 'shukra',
+    'Rahu Grah': 'rahu',
+    'Ketu Grah': 'ketu',
   };
+
+  /**
+   * Explicit overrides for items that belong to a key different from their deity.en
+   * (e.g. kali-chalisa has deity 'Goddess Durga' but also appears under 'kali'),
+   * and for mantra/stotra cross-listing sections shown only when explicitly filtered.
+   */
+  private readonly EXPLICIT_CATEGORY_IDS: Record<string, string[]> = {
+    'kali': ['kali-chalisa'],
+    'hanuman-chalisa': ['hanuman-chalisa', 'hanuman-chalisa-fast'],
+    'shiv-tandav': ['shiv-tandav-stotram'],
+    'mahamrityunjaya': ['mahamrityunjaya-mantra'],
+    'vishnu-sahasranama': ['vishnu-sahasranama'],
+    'ram-raksha': ['ram-raksha-stotra', 'ram-raksha-stotra-fast'],
+  };
+
+  /** Lazy-built reverse index: category key → DarshanItem[]. Built once on first access. */
+  private categoryCache: Map<string, DarshanItem[]> | null = null;
+
+  private buildCategoryCache(): Map<string, DarshanItem[]> {
+    const cache = new Map<string, DarshanItem[]>();
+
+    for (const item of this.devotionalItems) {
+      const key = item.deity?.en ? this.DEITY_KEY_MAP[item.deity.en] : undefined;
+      if (!key) continue;
+      const bucket = cache.get(key);
+      if (bucket) bucket.push(item);
+      else cache.set(key, [item]);
+    }
+
+    for (const [key, ids] of Object.entries(this.EXPLICIT_CATEGORY_IDS)) {
+      cache.set(key, this.devotionalItems.filter(i => ids.includes(i.id)));
+    }
+
+    return cache;
+  }
 
   getItemsByCategory(category: string): DarshanItem[] {
     if (category === 'jyotirlinga') return this.jyotirlingaItems;
@@ -1751,8 +1742,7 @@ export class DarshanDataService {
   }
 
   getItemsByDeity(key: string): DarshanItem[] {
-    const ids = this.categoryMap[key];
-    if (!ids?.length) return [];
-    return this.devotionalItems.filter(item => ids.includes(item.id));
+    this.categoryCache ??= this.buildCategoryCache();
+    return this.categoryCache.get(key) ?? [];
   }
 }
