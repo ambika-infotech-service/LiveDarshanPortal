@@ -1,6 +1,6 @@
-import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { LanguageService, Language } from './services/language';
+import { Language, LanguageService } from './services/language';
 import { SeoService } from './services/seo.service';
 
 @Component({

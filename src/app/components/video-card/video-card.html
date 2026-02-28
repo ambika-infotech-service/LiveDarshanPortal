@@ -1,65 +1,63 @@
 <article class="col-12 col-md-6 col-lg-4 mb-3">
-  <div class="card h-100 shadow-sm darshan-card mx-2" [attr.aria-label]="getAriaLabel()">
-    @if (item().isLive) {
-      <div class="live-badge">
-        <span class="badge bg-danger pulse" role="status" aria-live="polite">
-          <i class="bi bi-circle-fill" aria-hidden="true"></i>
-          {{ languageService.translate('liveNow') }}
-        </span>
-      </div>
-    }
-
-    <div class="card-body">
-      <h3 class="card-title text-center mb-3">
-        {{ getTranslatedName() }}
-      </h3>
-
-      @if (item().location) {
-        <p class="card-text text-muted small mb-2">
-          <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-          <strong>{{ languageService.translate('location') }}:</strong>
-          <span>{{ getTranslatedLocation() }}</span>
-        </p>
-      }
-
-      @if (item().deity) {
-        <p class="card-text text-muted small mb-3">
-          <i class="bi bi-star-fill" aria-hidden="true"></i>
-          <strong>{{ languageService.translate('deity') }}:</strong>
-          <span>{{ getTranslatedDeity() }}</span>
-        </p>
-      }
-
-      <div class="ratio ratio-16x9 mb-2 position-relative">
-        @if (!item().isLive && item().category !== 'devotional-video') {
-          <div class="offline-overlay" aria-label="Stream offline">
-            <div class="offline-message">
-              <i class="bi bi-pause-circle-fill" aria-hidden="true"></i>
-              <p>{{ languageService.translate('offlineMessage') }}</p>
-            </div>
-          </div>
+    <div class="card h-100 shadow-sm darshan-card mx-2" [attr.aria-label]="getAriaLabel()">
+        @if (item().isLive) {
+        <div class="live-badge">
+            <span class="badge bg-danger pulse" role="status" aria-live="polite">
+                <i class="bi bi-circle-fill" aria-hidden="true"></i>
+                {{ languageService.translate('liveNow') }}
+            </span>
+        </div>
         }
 
-        <iframe
-          [src]="getEmbedUrl()"
-          [title]="getTranslatedName()"
-          [attr.aria-label]="getAltText()"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="rounded">
-        </iframe>
-      </div>
+        <div class="card-body">
+            <h3 class="card-title text-center mb-3">
+                {{ getTranslatedName() }}
+            </h3>
 
-      <a
-        [href]="getYouTubeUrl()"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-danger w-100 d-flex align-items-center justify-content-center gap-2"
-        [attr.aria-label]="'Watch ' + getTranslatedName() + ' on YouTube (opens in new window)'">
-        <i class="bi bi-youtube" aria-hidden="true"></i>
-        Watch on YouTube
-      </a>
+            @if (item().location) {
+            <p class="card-text text-muted small mb-2">
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                <strong>{{ languageService.translate('location') }}:</strong>
+                <span>{{ getTranslatedLocation() }}</span>
+            </p>
+            }
+
+            @if (item().deity) {
+            <p class="card-text text-muted small mb-3">
+                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                <strong>{{ languageService.translate('deity') }}:</strong>
+                <span>{{ getTranslatedDeity() }}</span>
+            </p>
+            }
+
+            <div class="ratio ratio-16x9 mb-2 position-relative">
+                @if (!item().isLive && item().category !== 'devotional-video') {
+                <div class="offline-overlay" aria-label="Stream offline">
+                    <div class="offline-message">
+                        <i class="bi bi-pause-circle-fill" aria-hidden="true"></i>
+                        <p>{{ languageService.translate('offlineMessage') }}</p>
+                    </div>
+                </div>
+                }
+
+                <iframe [src]="getEmbedUrl()" [title]="getTranslatedName()" [attr.aria-label]="getAltText()"
+                    frameborder="0" allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+          " allowfullscreen class="rounded">
+                </iframe>
+            </div>
+
+            <a [href]="getYouTubeUrl()" target="_blank" rel="noopener noreferrer"
+                class="btn btn-danger w-100 d-flex align-items-center justify-content-center gap-2"
+                [attr.aria-label]="'Watch ' + getTranslatedName() + ' on YouTube (opens in new window)'">
+                <i class="bi bi-youtube" aria-hidden="true"></i>
+                Watch on YouTube
+            </a>
+        </div>
     </div>
-  </div>
 </article>

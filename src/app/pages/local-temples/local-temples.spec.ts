@@ -10,7 +10,7 @@ describe('LocalTemples', () => {
     await TestBed.configureTestingModule({
       imports: [LocalTemples]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(LocalTemples);
     component = fixture.componentInstance;

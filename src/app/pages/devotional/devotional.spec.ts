@@ -10,7 +10,7 @@ describe('Devotional', () => {
     await TestBed.configureTestingModule({
       imports: [Devotional]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(Devotional);
     component = fixture.componentInstance;

@@ -1,151 +1,112 @@
 <!-- Live Darshan Portal -->
 <div class="min-vh-100" style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%)">
-  <!-- Header -->
-  <header class="bg-white shadow-sm sticky-top" role="banner">
-    <nav
-      class="navbar navbar-expand-lg navbar-light"
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center"
-          href="/"
-          aria-label="Live Darshan Portal Home"
-        >
-          <i class="bi bi-brightness-high-fill text-warning me-2 fs-3" aria-hidden="true"></i>
-          <span class="fw-bold text-primary">{{ languageService.translate('title') }}</span>
-        </a>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky-top" role="banner">
+        <nav class="navbar navbar-expand-lg navbar-light" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Live Darshan Portal Home">
+                    <i class="bi bi-brightness-high-fill text-warning me-2 fs-3" aria-hidden="true"></i>
+                    <span class="fw-bold text-primary">{{ languageService.translate('title') }}</span>
+                </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                routerLink="/jyotirlingas"
-                routerLinkActive="active fw-semibold"
-                [attr.aria-current]="'page'"
-              >
-                <i class="bi bi-star-fill me-1" aria-hidden="true"></i>
-                {{ languageService.translate('jyotirlingas') }}
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                routerLink="/local-temples"
-                routerLinkActive="active fw-semibold"
-                [attr.aria-current]="'page'"
-              >
-                <i class="bi bi-building me-1" aria-hidden="true"></i>
-                {{ languageService.translate('localTemples') }}
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                routerLink="/devotional"
-                routerLinkActive="active fw-semibold"
-                [attr.aria-current]="'page'"
-              >
-                <i class="bi bi-music-note-beamed me-1" aria-hidden="true"></i>
-                {{ languageService.translate('devotionalVideos') }}
-              </a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                aria-label="Language selection"
-              >
-                <i class="bi bi-globe" aria-hidden="true"></i>
-                @switch (languageService.currentLanguage()) {
-                  @case ('en') {
-                    English
-                  }
-                  @case ('hi') {
-                    हिंदी
-                  }
-                  @case ('gu') {
-                    ગુજરાતી
-                  }
-                }
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" (click)="setLanguage('en')" role="button">English</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" (click)="setLanguage('hi')" role="button">हिंदी</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" (click)="setLanguage('gu')" role="button">ગુજરાતી</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/jyotirlingas" routerLinkActive="active fw-semibold"
+                                [attr.aria-current]="'page'">
+                                <i class="bi bi-star-fill me-1" aria-hidden="true"></i>
+                                {{ languageService.translate('jyotirlingas') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/local-temples" routerLinkActive="active fw-semibold"
+                                [attr.aria-current]="'page'">
+                                <i class="bi bi-building me-1" aria-hidden="true"></i>
+                                {{ languageService.translate('localTemples') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/devotional" routerLinkActive="active fw-semibold"
+                                [attr.aria-current]="'page'">
+                                <i class="bi bi-music-note-beamed me-1" aria-hidden="true"></i>
+                                {{ languageService.translate('devotionalVideos') }}
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Language selection">
+                                <i class="bi bi-globe" aria-hidden="true"></i>
+                                @switch (languageService.currentLanguage()) {
+                                @case ('en') {
+                                English
+                                }
+                                @case ('hi') {
+                                हिंदी
+                                }
+                                @case ('gu') {
+                                ગુજરાતી
+                                }
+                                }
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" (click)="setLanguage('en')" role="button">English</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" (click)="setLanguage('hi')" role="button">हिंदी</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" (click)="setLanguage('gu')" role="button">ગુજરાતી</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-2" role="main">
+        <!-- Page Title (hidden but for SEO) -->
+        <h1 class="visually-hidden">
+            {{ languageService.translate('title') }} - Watch Live Darshan of 12 Jyotirlingas and Temples
+        </h1>
+
+        <!-- Tab Content -->
+        <div class="tab-content" role="main">
+            <router-outlet />
         </div>
-      </div>
-    </nav>
-  </header>
+    </main>
 
-  <!-- Main Content -->
-  <main class="container py-2" role="main">
-    <!-- Page Title (hidden but for SEO) -->
-    <h1 class="visually-hidden">
-      {{ languageService.translate('title') }} - Watch Live Darshan of 12 Jyotirlingas and Temples
-    </h1>
+    <!-- Footer -->
+    <footer class="bg-white mt-3 mt-md-5 py-3 py-md-4 border-top" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-2">
+                        <i class="bi bi-heart-fill text-danger" aria-hidden="true"></i>
+                        Ambika Infotech © 2026 - Watch Live Darshan of 12 Jyotirlingas and More. Designed and
+                        developed by
+                        <a href="https://ambikainfotech.online" target="_blank" rel="noopener noreferrer"
+                            class="text-decoration-none text-primary">Ambika Infotech</a>
+                    </p>
 
-    <!-- Tab Content -->
-    <div class="tab-content" role="main">
-      <router-outlet />
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-white mt-3 mt-md-5 py-3 py-md-4 border-top" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="text-muted mb-2">
-            <i class="bi bi-heart-fill text-danger" aria-hidden="true"></i>
-            Ambika Infotech © 2026 - Watch Live Darshan of 12 Jyotirlingas and More. Designed and
-            developed by
-            <a
-              href="https://ambikainfotech.online"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-decoration-none text-primary"
-              >Ambika Infotech</a
-            >
-          </p>
-
-          <p class="text-muted small mb-0">
-            <i class="bi bi-envelope" aria-hidden="true"></i>
-            If you have any issues or suggestions, please email us at
-            <a href="mailto:psmit972@gmail.com" class="text-decoration-none text-primary"
-              >psmit972@gmail.com</a
-            >
-          </p>
+                    <p class="text-muted small mb-0">
+                        <i class="bi bi-envelope" aria-hidden="true"></i>
+                        If you have any issues or suggestions, please email us at
+                        <a href="mailto:psmit972@gmail.com"
+                            class="text-decoration-none text-primary">psmit972@gmail.com</a>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 </div>

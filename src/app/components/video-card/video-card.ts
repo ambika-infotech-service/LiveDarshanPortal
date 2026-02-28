@@ -1,4 +1,4 @@
-import { Component, input, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { DarshanItem } from '../../models/darshan.model';
 import { LanguageService } from '../../services/language';
@@ -22,7 +22,7 @@ export class VideoCardComponent implements OnInit {
     // Add video schema for SEO
     const itemData = this.item();
     const description = itemData.description?.[this.languageService.currentLanguage()] ||
-                       itemData.name[this.languageService.currentLanguage()];
+      itemData.name[this.languageService.currentLanguage()];
 
     this.seoService.addVideoSchema({
       name: this.getTranslatedName(),
