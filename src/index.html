@@ -37,13 +37,15 @@
     <meta name="twitter:creator" content="@livedarshanportal" />
 
     <!-- Additional Meta Tags for SEO -->
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="language" content="en-US" />
-    <meta name="revisit-after" content="7 days" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://livedarshan.ambikainfotech.online/" />
+    <!-- AEO: Speakable hint for voice assistants -->
+    <meta name="speakable" content="title, description" />
+
+    <!-- Canonical URL (id allows JS updates per route) -->
+    <link id="canonical" rel="canonical" href="https://livedarshan.ambikainfotech.online/" />
 
     <!-- Alternate Links for Multilingual Support -->
     <link rel="alternate" hreflang="en" href="https://livedarshan.ambikainfotech.online/" />
@@ -79,15 +81,17 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Live Darshan Portal",
-        "description": "Watch live darshan of 12 Jyotirlingas, local temples, and devotional videos",
+        "alternateName": "Live Temple Darshan Online",
+        "description": "Watch live darshan of 12 Jyotirlingas, Gujarat temples, and devotional videos. Free 24/7 streaming from sacred Hindu temples.",
         "url": "https://livedarshan.ambikainfotech.online",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://livedarshan.ambikainfotech.online/search?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
+        "inLanguage": ["en", "hi", "gu"],
+        "about": {
+          "@type": "Thing",
+          "name": "Hindu Temple Live Streams & Devotional Content"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Devotees, Hindu community, Spiritual seekers"
         }
       }
     </script>
