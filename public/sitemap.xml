@@ -5,17 +5,17 @@
   <!-- Homepage (redirects to /jyotirlingas) -->
   <url>
     <loc>https://livedarshan.ambikainfotech.online/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- 12 Jyotirlingas -->
+  <!-- Jyotirlingas Section -->
   <url>
     <loc>https://livedarshan.ambikainfotech.online/jyotirlingas</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/UCT1egsvA08YcdMLiEu1DTRg/maxresdefault.jpg</image:loc>
       <image:title>Somnath Temple Live Darshan - Jyotirlinga</image:title>
@@ -38,12 +38,12 @@
     </image:image>
   </url>
 
-  <!-- Local Temples (Gujarat) -->
+  <!-- Local Temples Section -->
   <url>
     <loc>https://livedarshan.ambikainfotech.online/local-temples</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/UCJhH7NV0ArTSUA3r4uXnGCw/maxresdefault.jpg</image:loc>
       <image:title>Umiya Mata Temple Unjha Live Darshan</image:title>
@@ -70,12 +70,12 @@
     </image:image>
   </url>
 
-  <!-- Devotional Videos -->
+  <!-- Devotional Videos Section -->
   <url>
     <loc>https://livedarshan.ambikainfotech.online/devotional</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://img.youtube.com/vi/AETFvQonfV8/maxresdefault.jpg</image:loc>
       <image:title>Hanuman Chalisa</image:title>
@@ -100,175 +100,6 @@
       <image:loc>https://img.youtube.com/vi/MJ14wONWjWg/maxresdefault.jpg</image:loc>
       <image:title>Shani Chalisa</image:title>
     </image:image>
-  </url>
-
-</urlset>
-
-  <!-- Homepage -->
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Jyotirlingas Section -->
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#jyotirlingas</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Local Temples Section -->
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#local-temples</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Devotional Videos Section -->
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#devotional</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Video Landing Pages with Schema -->
-  <!-- Jyotirlinga Videos -->
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#somnath</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <video:video>
-      <video:title>Somnath Temple Live Darshan - Jyotirlinga</video:title>
-      <video:description>Watch live darshan of Somnath Jyotirlinga Temple</video:description>
-      <video:thumbnail_loc>https://img.youtube.com/vi/CHANGE_ME/maxresdefault.jpg</video:thumbnail_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=CHANGE_ME</video:content_loc>
-    </video:video>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#mallikarjuna</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <video:video>
-      <video:title>Mallikarjuna Jyotirlinga Live Darshan</video:title>
-      <video:description>Experience live streaming of Mallikarjuna Jyotirlinga Temple</video:description>
-      <video:thumbnail_loc>https://img.youtube.com/vi/CHANGE_ME/maxresdefault.jpg</video:thumbnail_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=CHANGE_ME</video:content_loc>
-    </video:video>
-  </url>
-
-  <!-- More Jyotirlingas -->
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#ujjain</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#omkareshwar</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#kedarnath</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#kashi</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#trimbakeshwar</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#bhimashankar</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#vikarabhairava</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#rameswaram</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#grishneshwar</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Devotional Videos Section -->
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#hanuman-videos</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#shiva-videos</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#durga-videos</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#ganesh-videos</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#vishnu-videos</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://livedarshan.ambikainfotech.online/#shani-videos</loc>
-    <lastmod>2024-01-01T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
   </url>
 
 </urlset>
